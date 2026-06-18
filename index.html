@@ -86,14 +86,95 @@ button{font-family:var(--ff-sans);cursor:pointer;border:none;background:none;}
   background:var(--stone);
   display:flex;align-items:center;justify-content:center;
   position:relative;overflow:hidden;padding:64px 48px;
+  perspective:1100px;
+  perspective-origin:50% 45%;
 }
-.hero-shoe-wrap{
-  width:90%;max-width:460px;
-  transform:rotate(-5deg);
-  transition:transform .9s var(--ease);
+.hero-statement{
+  font-family:var(--ff-serif);
+  font-size:clamp(34px,4vw,58px);
+  font-weight:300;
+  line-height:1.06;
+  letter-spacing:-1px;
+  max-width:520px;
+  margin-top:18px;
 }
-.hero-shoe-wrap:hover{transform:rotate(0) scale(1.04);}
-.hero-shoe-wrap img{width:100%;object-fit:contain;mix-blend-mode:multiply;}
+.hero-shoe-wrap{width:100%;max-width:620px;position:relative;z-index:2;}
+.hero-scene{
+  width:min(100%,620px);
+  min-height:560px;
+  position:relative;
+  transform-style:preserve-3d;
+  transition:transform .18s ease-out;
+}
+.hero-panel{
+  position:absolute;
+  inset:46px 26px 58px;
+  background:linear-gradient(145deg,rgba(247,247,245,.58),rgba(217,217,214,.92));
+  border:1px solid rgba(31,31,31,.08);
+  transform:translateZ(-70px) rotateY(-3deg);
+}
+.hero-wordmark{
+  position:absolute;
+  left:50%;
+  top:45%;
+  transform:translate(-50%,-50%) translateZ(-28px);
+  font-size:clamp(52px,8vw,112px);
+  font-weight:500;
+  letter-spacing:12px;
+  text-transform:uppercase;
+  color:rgba(31,31,31,.06);
+  white-space:nowrap;
+  pointer-events:none;
+}
+.hero-product{
+  position:absolute;
+  left:50%;
+  top:48%;
+  width:min(88%,520px);
+  transform:translate(-50%,-50%) translateZ(96px) rotate(-7deg);
+  filter:drop-shadow(0 34px 30px rgba(31,31,31,.18));
+  transition:transform .7s var(--ease);
+  z-index:4;
+}
+.hero-scene:hover .hero-product{transform:translate(-50%,-51%) translateZ(118px) rotate(-4deg);}
+.hero-product img{width:100%;object-fit:contain;mix-blend-mode:multiply;}
+.hero-shadow{
+  position:absolute;
+  left:50%;
+  top:68%;
+  width:58%;
+  height:42px;
+  transform:translateX(-50%) translateZ(10px) rotateX(72deg);
+  background:radial-gradient(ellipse,rgba(31,31,31,.24) 0%,rgba(31,31,31,.08) 46%,rgba(31,31,31,0) 72%);
+  filter:blur(8px);
+  z-index:2;
+}
+.hero-float-card{
+  position:absolute;
+  background:rgba(247,247,245,.9);
+  border:1px solid rgba(31,31,31,.1);
+  box-shadow:0 18px 48px rgba(31,31,31,.08);
+  backdrop-filter:blur(12px);
+  z-index:5;
+}
+.hero-info-card{
+  left:42px;
+  bottom:92px;
+  width:190px;
+  padding:18px 18px 16px;
+  transform:translateZ(150px) rotateY(8deg);
+}
+.hero-size-card{
+  right:40px;
+  top:102px;
+  width:138px;
+  padding:16px;
+  transform:translateZ(128px) rotateY(-9deg);
+}
+.hero-card-label{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-50);margin-bottom:9px;}
+.hero-card-title{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:4px;}
+.hero-card-sub{font-size:11px;color:var(--ink-50);line-height:1.6;}
+.hero-card-price{font-family:var(--ff-serif);font-size:28px;font-weight:300;line-height:1;margin-bottom:10px;}
 .hero-caption{position:absolute;bottom:28px;right:24px;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(31,31,31,.3);writing-mode:vertical-rl;}
 .hero-navy-bar{position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--navy);}
 
@@ -106,10 +187,18 @@ button{font-family:var(--ff-sans);cursor:pointer;border:none;background:none;}
 .product-canvas-header{
   display:flex;align-items:baseline;justify-content:space-between;
   border-bottom:1px solid rgba(31,31,31,.12);
-  padding-bottom:20px;margin-bottom:56px;
+  padding-bottom:20px;margin-bottom:18px;
 }
 .product-canvas-title{font-family:var(--ff-serif);font-size:clamp(24px,3vw,36px);font-weight:300;color:var(--ink);}
 .product-canvas-sub{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-50);}
+.product-canvas-copy{font-size:13px;color:var(--ink-50);line-height:1.8;max-width:520px;margin-bottom:32px;transition:opacity .28s ease,transform .28s ease;}
+.featured-selector{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid rgba(31,31,31,.1);border-bottom:1px solid rgba(31,31,31,.1);margin-bottom:54px;max-width:760px;}
+.featured-choice{background:transparent;padding:14px 18px 16px 0;display:grid;grid-template-columns:28px 1fr;gap:12px;align-items:start;text-align:left;min-height:72px;border-right:1px solid rgba(31,31,31,.08);opacity:.56;transition:opacity .24s ease,background .24s ease;cursor:pointer;}
+.featured-choice:last-child{border-right:none;}
+.featured-choice:hover,.featured-choice.active{opacity:1;background:rgba(255,255,255,.28);}
+.featured-choice-index{font-family:var(--ff-serif);font-size:18px;font-weight:300;color:var(--ink-20);line-height:1;}
+.featured-choice-model{display:block;font-size:9px;letter-spacing:1.8px;text-transform:uppercase;color:var(--ink);margin-bottom:7px;}
+.featured-choice-color{display:block;font-size:10px;color:var(--ink-50);line-height:1.55;max-width:180px;}
 
 /* 3D scene */
 .scene-wrap{
@@ -119,12 +208,14 @@ button{font-family:var(--ff-sans);cursor:pointer;border:none;background:none;}
   min-height:500px;
   position:relative;
 }
+.scene-wrap.is-shifting .scene{opacity:.34;transform:scale(.985) rotateX(1deg);}
+.scene-wrap.is-shifting ~ *,.product-canvas.is-shifting .product-canvas-copy{opacity:.45;transform:translateY(4px);}
 .scene{
   position:relative;
   width:100%;max-width:860px;
   height:480px;
   transform-style:preserve-3d;
-  transition:transform .1s linear;
+  transition:opacity .34s ease,transform .34s ease;
 }
 .hcard{
   position:absolute;background:var(--white);
@@ -136,9 +227,10 @@ button{font-family:var(--ff-sans);cursor:pointer;border:none;background:none;}
 
 .hcard-main{width:280px;left:50%;top:30px;margin-left:-140px;padding:24px 20px 18px;transform:rotateY(-8deg) rotateX(5deg);z-index:10;}
 .hcard-main:hover{transform:rotateY(0) rotateX(0) scale(1.02);}
-.hcard-main-img{width:100%;aspect-ratio:1;object-fit:contain;mix-blend-mode:multiply;transition:transform .6s var(--ease);}
+.hcard-main-img{width:100%;aspect-ratio:1;object-fit:contain;mix-blend-mode:multiply;transition:opacity .24s ease,transform .6s var(--ease);}
 .hcard-main:hover .hcard-main-img{transform:scale(1.04) rotate(-2deg);}
-.hcard-price{position:absolute;top:12px;right:12px;background:var(--navy);color:var(--white);font-size:11px;font-weight:500;padding:5px 12px;letter-spacing:.5px;}
+.hcard-price{position:absolute;top:12px;right:12px;background:var(--navy);color:var(--white);font-size:11px;font-weight:500;padding:7px 12px;letter-spacing:.5px;text-align:right;line-height:1.25;}
+.hcard-price span{display:block;font-size:7px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(247,247,245,.48);margin-bottom:2px;}
 .hcard-label{margin-top:10px;}
 .hcard-label h2{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink);}
 .hcard-label p{font-size:10px;color:var(--ink-50);margin-top:3px;}
@@ -172,9 +264,8 @@ button{font-family:var(--ff-sans);cursor:pointer;border:none;background:none;}
 
 /* MARQUEE */
 .marquee{background:var(--navy);padding:11px 0;overflow:hidden;}
-.mtrack{display:flex;gap:48px;animation:mscroll 30s linear infinite;white-space:nowrap;}
-.mtrack span{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,247,245,.3);flex-shrink:0;}
-.mtrack .dot{color:rgba(247,247,245,.15);}
+.mtrack{display:flex;gap:92px;animation:mscroll 30s linear infinite;white-space:nowrap;}
+.mtrack span{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,247,245,.46);flex-shrink:0;}
 @keyframes mscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
 /* SECTIONS */
@@ -241,7 +332,7 @@ button{font-family:var(--ff-sans);cursor:pointer;border:none;background:none;}
 .belief:last-child{border-right:none;}
 .belief-tag{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:18px;}
 .belief-title{font-family:var(--ff-serif);font-size:26px;font-weight:300;margin-bottom:14px;line-height:1.2;}
-.belief-body{font-size:12px;color:rgba(247,247,245,.4);line-height:1.9;}
+.belief-body{font-size:12px;color:rgba(247,247,245,.58);line-height:1.9;}
 
 /* ABOUT */
 .about-split{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink-08);border-bottom:1px solid var(--ink-08);}
@@ -329,17 +420,62 @@ footer{background:var(--ink);color:var(--white);padding:64px 40px 32px;}
 
   /* Hero */
   .hero{grid-template-columns:1fr;min-height:auto;}
-  .hero-left{padding:52px 24px 40px;border-right:none;border-bottom:1px solid var(--ink-08);}
-  .hero-right{min-height:60vw;padding:40px 24px;}
+  .hero-left{padding:34px 24px 24px;border-right:none;border-bottom:1px solid var(--ink-08);}
+  .hero-body{padding-top:28px;}
+  .hero-desc{font-size:13px;line-height:1.7;max-width:340px;margin-bottom:22px;}
+  .hero-actions{gap:10px;margin-bottom:22px;}
+  .hero-actions .btn-dark,
+  .hero-actions .btn-outline{padding:12px 18px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
+  .hero-meta{gap:14px;}
+  .hero-right{min-height:auto;padding:18px 18px 34px;perspective:none;}
+  .hero-statement{font-size:36px;letter-spacing:-.5px;margin-top:14px;}
+  .hero-scene{
+    min-height:360px;
+    transform:none !important;
+    overflow:visible;
+  }
+  .hero-panel{inset:22px 0 34px;transform:none;}
+  .hero-wordmark{font-size:46px;letter-spacing:6px;top:42%;transform:translate(-50%,-50%);}
+  .hero-product{
+    top:48%;
+    width:min(94%,380px);
+    transform:translate(-50%,-50%) rotate(-6deg) !important;
+  }
+  .hero-scene:hover .hero-product{transform:translate(-50%,-50%) rotate(-6deg) !important;}
+  .hero-info-card{left:6px;bottom:34px;width:158px;padding:14px;transform:none;}
+  .hero-size-card{right:6px;top:44px;width:116px;padding:13px;transform:none;}
+  .hero-card-label{font-size:7px;margin-bottom:7px;}
+  .hero-card-title{font-size:10px;}
+  .hero-card-sub{font-size:10px;line-height:1.45;}
+  .hero-card-price{font-size:22px;margin-bottom:8px;}
+  .hero-shadow{width:72%;top:66%;height:34px;transform:translateX(-50%) rotateX(72deg);}
 
   /* 3D canvas — mobile: static stacked layout */
   .product-canvas{padding:56px 24px;}
+  .product-canvas-copy{margin-bottom:32px;}
+  .featured-selector{
+    display:flex;
+    gap:1px;
+    overflow-x:auto;
+    margin:0 -24px 28px;
+    padding:0 24px 8px;
+    background:transparent;
+    scroll-snap-type:x proximity;
+    -webkit-overflow-scrolling:touch;
+  }
+  .featured-selector::-webkit-scrollbar{display:none;}
+  .featured-choice{
+    min-width:174px;
+    max-width:174px;
+    scroll-snap-align:start;
+    background:rgba(247,247,245,.68);
+  }
   .scene-wrap{perspective:none;min-height:auto;}
   .scene{
     position:static;
     width:100%;height:auto;
     display:flex;flex-direction:column;
-    align-items:center;gap:16px;
+    align-items:center;gap:14px;
     transform:none !important;
   }
   .hcard{
@@ -350,8 +486,62 @@ footer{background:var(--ink);color:var(--white);padding:64px 40px 32px;}
     transform:none !important;
   }
   .hcard:hover{transform:none !important;}
-  .hcard-cta{top:auto !important;}
+  .hcard-stat{display:none;}
+  .hcard-main{
+    order:1;
+    max-width:390px !important;
+    padding:18px 16px 20px;
+    overflow:hidden;
+    touch-action:pan-y;
+    transform-origin:center;
+    transition:opacity .6s ease, transform .28s ease, box-shadow .28s ease;
+    opacity:0;
+    --mobile-card-transform:translateY(18px);
+    transform:var(--mobile-card-transform) !important;
+  }
+  .hcard-main::before{
+    content:'STOKADO';
+    position:absolute;
+    left:50%;
+    top:39%;
+    transform:translate(-50%,-50%);
+    font-size:clamp(42px,18vw,76px);
+    font-weight:500;
+    letter-spacing:8px;
+    color:rgba(31,31,31,.055);
+    pointer-events:none;
+    z-index:0;
+  }
+  .hcard-main::after{
+    content:'';
+    position:absolute;
+    left:50%;
+    top:62%;
+    width:68%;
+    height:34px;
+    transform:translateX(-50%);
+    background:radial-gradient(ellipse,rgba(31,31,31,.18) 0%,rgba(31,31,31,.07) 48%,rgba(31,31,31,0) 72%);
+    filter:blur(8px);
+    z-index:0;
+    pointer-events:none;
+  }
+  .hcard-main.mobile-visible{opacity:1;--mobile-card-transform:translateY(0);}
+  .hcard-main.is-touching{box-shadow:0 24px 48px rgba(31,31,31,.12);}
+  .hcard-main-img{position:relative;z-index:1;width:100%;height:auto;max-height:300px;object-fit:contain;}
+  .hcard-price{z-index:2;top:14px;right:14px;}
+  .hcard-label{position:relative;z-index:2;margin-top:12px;padding-top:10px;border-top:1px solid var(--ink-08);}
+  .hcard-label h2{font-size:11px;}
+  .hcard-label p{font-size:11px;line-height:1.5;}
+  .hcard-opts{
+    order:2;
+    max-width:390px !important;
+    padding:18px 16px;
+  }
+  .hcard-cta{order:3;top:auto !important;max-width:390px !important;}
   .scene-aside{display:none;}
+  @media (prefers-reduced-motion: reduce){
+    .hcard-main{opacity:1;transform:none !important;transition:none;}
+  }
 
   .sec{padding:56px 24px;}
   .life{padding:56px 24px;}
@@ -377,7 +567,20 @@ footer{background:var(--ink);color:var(--white);padding:64px 40px 32px;}
   footer{padding:48px 24px 28px;}
 }
 @media(max-width:560px){
-  .hero-heading{font-size:52px;}
+  .hero-left{padding:24px 20px 16px;}
+  .hero-body{padding-top:20px;}
+  .hero-desc{margin-bottom:16px;}
+  .hero-actions{margin-bottom:16px;}
+  .hero-heading{font-size:44px;}
+  .hero-statement{font-size:28px;line-height:1.08;margin-top:10px;}
+  .hero-right{padding:14px 16px 30px;}
+  .hero-scene{min-height:330px;}
+  .hero-product{top:46%;width:min(94%,330px);}
+  .hero-wordmark{font-size:40px;letter-spacing:5px;}
+  .hero-info-card{left:0;bottom:28px;width:148px;padding:12px;}
+  .hero-size-card{right:0;top:36px;width:106px;padding:12px;}
+  .hero-card-sub{font-size:9px;}
+  .hero-card-price{font-size:20px;}
   .grid-products{grid-template-columns:1fr 1fr;}
   .life-grid{grid-template-columns:1fr;}
   .truth-points{grid-template-columns:1fr;}
@@ -412,13 +615,13 @@ footer{background:var(--ink);color:var(--white);padding:64px 40px 32px;}
     <p class="hero-eyebrow">Footwear Brand · Philippines</p>
     <div>
       <h1 class="hero-heading">STOKADO</h1>
-      <p class="hero-tagline">Everyday footwear for Filipino life.</p>
+      <h2 class="hero-statement">Built for the rhythm of everyday movement in the Philippines.</h2>
     </div>
     <div class="hero-body">
-      <p class="hero-desc">Comfortable, durable, honestly priced shoes for commutes, campus days, workdays, errands, and weekends across the Philippines.</p>
+      <p class="hero-desc">An everyday footwear campaign shaped by commutes, campus routes, working hours, errands, and slow weekends.</p>
       <div class="hero-actions">
-        <a href="#why" class="btn-dark">Why STOKADO</a>
-        <a href="#collection" class="btn-outline">View Collection</a>
+        <a href="#collection" class="btn-dark">View Collection</a>
+        <a href="#why" class="btn-outline">Why STOKADO</a>
       </div>
       <div class="hero-meta">
         <span>Comfort</span>
@@ -427,66 +630,57 @@ footer{background:var(--ink);color:var(--white);padding:64px 40px 32px;}
       </div>
     </div>
   </div>
-  <div class="hero-right">
+  <div class="hero-right" id="hero3dWrap">
     <div class="hero-shoe-wrap">
-      <img src="images/fallback-product.png" alt="STOKADO everyday footwear"/>
+      <div class="hero-scene" id="hero3dScene">
+        <div class="hero-panel"></div>
+        <div class="hero-wordmark">STOKADO</div>
+        <div class="hero-shadow"></div>
+        <div class="hero-product">
+          <img src="public/products/t901-white.png" alt="STOKADO T901 White / Gum everyday footwear"/>
+        </div>
+        <div class="hero-float-card hero-info-card">
+          <div class="hero-card-label">Featured style</div>
+          <div class="hero-card-title">T901 White / Gum</div>
+          <div class="hero-card-sub">Everyday court sneaker for daily movement.</div>
+        </div>
+        <div class="hero-float-card hero-size-card">
+          <div class="hero-card-label">From</div>
+          <div class="hero-card-price">₱1,199</div>
+          <div class="hero-card-sub">EU 39–45</div>
+        </div>
+      </div>
     </div>
-    <p class="hero-caption">STOKADO · Everyday Footwear</p>
+    <p class="hero-caption">T901 · White / Gum</p>
     <div class="hero-navy-bar"></div>
   </div>
 </section>
 
-<!-- MARQUEE -->
-<div class="marquee" aria-hidden="true">
-  <div class="mtrack">
-    <span>Everyday Footwear</span><span class="dot">·</span>
-    <span>Filipino Life</span><span class="dot">·</span>
-    <span>Comfort</span><span class="dot">·</span>
-    <span>Durability</span><span class="dot">·</span>
-    <span>Affordability</span><span class="dot">·</span>
-    <span>STOKADO Philippines</span><span class="dot">·</span>
-    <span>Everyday Footwear</span><span class="dot">·</span>
-    <span>Filipino Life</span><span class="dot">·</span>
-    <span>Comfort</span><span class="dot">·</span>
-    <span>Durability</span><span class="dot">·</span>
-    <span>Affordability</span><span class="dot">·</span>
-    <span>STOKADO Philippines</span><span class="dot">·</span>
-  </div>
-</div>
-
-<!-- WHY STOKADO -->
-<section class="beliefs" id="why">
-  <h2 class="beliefs-heading">WHY<br><em>STOKADO</em></h2>
-  <div class="beliefs-grid">
-    <div class="belief"><span class="belief-tag">Comfort</span><h3 class="belief-title">For everyday use.</h3><p class="belief-body">Not cheap shoes that only look good for a few wears. STOKADO is made for the repeat days: commuting, walking, working, and getting home.</p></div>
-    <div class="belief"><span class="belief-tag">Durability</span><h3 class="belief-title">Built for real movement.</h3><p class="belief-body">Not luxury shoes that ask you to be careful. Not sports shoes built for one activity. Everyday footwear has to handle the normal wear of Filipino life.</p></div>
-    <div class="belief"><span class="belief-tag">Affordability</span><h3 class="belief-title">Honest price, better value.</h3><p class="belief-body">You should not need to choose between disposable shoes and overpriced shoes. STOKADO sits in the middle: practical, reliable, and easy to wear often.</p></div>
-  </div>
-</section>
-
-<!-- 3D PRODUCT CANVAS — below hero -->
+<!-- CAMPAIGN SCENE -->
 <section class="product-canvas" id="featured">
   <div class="product-canvas-header">
-    <h2 class="product-canvas-title">Featured Product</h2>
-    <span class="product-canvas-sub">Loaded from /data/products.json</span>
+    <h2 class="product-canvas-title">Campaign Scene</h2>
+    <span class="product-canvas-sub">Morning Rush Form</span>
   </div>
+  <p class="product-canvas-copy">Living Pattern - The city starts early. STOKADO moves through the first walk, the ride, the wait, and the hours that follow.</p>
+  <div class="featured-selector" id="featuredSelector" aria-label="Campaign scenes"></div>
   <div class="scene-wrap" id="sceneWrap">
-    <p class="scene-aside l">Made for everyday movement</p>
-    <p class="scene-aside r">Designed for Philippine daily life</p>
+    <p class="scene-aside l">A rhythm of daily movement</p>
+    <p class="scene-aside r">Philippine everyday life</p>
     <div class="scene" id="heroScene">
       <div class="hcard hcard-stat">
-        <div class="hcard-stat-lbl">STOKADO</div>
-        <div class="hcard-stat-num">SS<br>25</div>
-        <div class="hcard-stat-sub">Everyday Footwear</div>
+        <div class="hcard-stat-lbl" id="featuredStatLabel">STOKADO T901</div>
+        <div class="hcard-stat-num" id="featuredStatSize">EU<br>39–45</div>
+        <div class="hcard-stat-sub" id="featuredStatType">Everyday Court Sneaker</div>
       </div>
       <div class="hcard hcard-opts">
-        <div class="hcard-opts-title">Colorway</div>
+        <div class="hcard-opts-title">Surface Tone</div>
         <div class="dot-row" id="heroDots"></div>
-        <div class="hcard-opts-title">Size (EU)</div>
+        <div class="hcard-opts-title" id="heroSizeTitle">Natural Movement EU 39–45</div>
         <div class="sz-grid" id="heroSizes"></div>
       </div>
       <div class="hcard hcard-main">
-        <div class="hcard-price" id="heroPrice">₱ —</div>
+        <div class="hcard-price" id="heroPrice"><span>Everyday Reality</span>₱ —</div>
         <img class="hcard-main-img" id="heroImg" src="" alt="STOKADO"/>
         <div class="hcard-label">
           <h2 id="heroName">—</h2>
@@ -506,22 +700,33 @@ footer{background:var(--ink);color:var(--white);padding:64px 40px 32px;}
   </div>
 </section>
 
-<!-- STOKADO IN REAL LIFE -->
+<!-- FEATURED OBJECT -->
 <section class="life" id="real-life">
   <div class="life-intro">
     <div>
-      <p class="life-kicker">STOKADO in real life</p>
-      <h2 class="life-title">Worn across everyday routes in the Philippines.</h2>
+      <p class="life-kicker">Featured object</p>
+      <h2 class="life-title">One shoe, held inside the movement of the day.</h2>
     </div>
-    <p class="life-copy">Built for daily life, not just display. STOKADO is made for people who keep moving through school days, work days, errands, commutes, and weekends.</p>
+    <p class="life-copy">The product is not the whole story. It is the object that carries the story: clean enough for the city, stable enough for long hours, simple enough to repeat.</p>
   </div>
   <div class="life-grid">
-    <article class="life-card"><p class="life-place">Campus walking</p><h3 class="life-line">Long walks between classes.</h3><p class="life-note">Comfort that does not need a special occasion.</p></article>
-    <article class="life-card"><p class="life-place">City commuting</p><h3 class="life-line">Jeepney steps, platforms, sidewalks.</h3><p class="life-note">Made for everyday movement across the city.</p></article>
-    <article class="life-card"><p class="life-place">Mall lifestyle</p><h3 class="life-line">Hours on foot without overthinking it.</h3><p class="life-note">Clean enough to wear out, practical enough to repeat.</p></article>
-    <article class="life-card"><p class="life-place">Weekend casual</p><h3 class="life-line">Easy shoes for easy plans.</h3><p class="life-note">For food runs, meetups, and slow afternoons.</p></article>
-    <article class="life-card"><p class="life-place">Daily errands</p><h3 class="life-line">The pair by the door.</h3><p class="life-note">Reliable footwear for the small trips that make up the day.</p></article>
-    <article class="life-card"><p class="life-place">Street movement</p><h3 class="life-line">Built for real surfaces.</h3><p class="life-note">Designed for Philippine daily life, not only product photos.</p></article>
+    <article class="life-card"><p class="life-place">Anchor</p><h3 class="life-line">STOKADO T901.</h3><p class="life-note">A court-inspired everyday shoe placed inside real movement, not isolated as a catalog object.</p></article>
+    <article class="life-card"><p class="life-place">Presence</p><h3 class="life-line">White / Gum.</h3><p class="life-note">Neutral, familiar, and easy to wear across routes that change from morning to night.</p></article>
+    <article class="life-card"><p class="life-place">Use</p><h3 class="life-line">Repeat days.</h3><p class="life-note">Made for the ordinary hours that ask more from footwear than a product photo can show.</p></article>
+  </div>
+</section>
+
+<!-- MATERIAL TRUTH -->
+<section class="truth">
+  <div class="truth-inner">
+    <p class="truth-label">Material truth</p>
+    <h2 class="truth-text">Everyday footwear has to survive repetition. We focus on steady comfort, practical construction, and materials that make sense for real Philippine movement.</h2>
+  </div>
+  <div class="truth-points">
+    <div class="truth-point"><strong>Upper</strong><span>Clean, wearable surfaces made to fit repeated daily styling.</span></div>
+    <div class="truth-point"><strong>Sole</strong><span>Ground contact built for walking, waiting, riding, and working.</span></div>
+    <div class="truth-point"><strong>Shape</strong><span>Simple forms that sit naturally inside school, city, work, and weekend use.</span></div>
+    <div class="truth-point"><strong>Value</strong><span>Practical materials and honest pricing without inflated theater.</span></div>
   </div>
 </section>
 
@@ -531,7 +736,7 @@ footer{background:var(--ink);color:var(--white);padding:64px 40px 32px;}
     <h2 class="sec-title">The Collection</h2>
     <span class="sec-action" id="productCount">Made for daily routes</span>
   </div>
-  <p class="life-copy" style="margin-bottom:32px;">Every pair is placed here as everyday footwear first. Made for long hours on foot, repeated wear, and the normal movement of Philippine daily life.</p>
+  <p class="life-copy" style="margin-bottom:32px;">The full line sits after the story. Each pair is placed as everyday footwear first: made for long hours on foot, repeated wear, and the normal movement of Philippine daily life.</p>
   <div class="filter-bar" id="filterBar">
     <button class="filter-btn active" data-filter="all">All</button>
     <button class="filter-btn" data-filter="Men">Men</button>
@@ -544,17 +749,35 @@ footer{background:var(--ink);color:var(--white);padding:64px 40px 32px;}
   </div>
 </section>
 
-<!-- BRAND TRUTH -->
-<section class="truth">
-  <div class="truth-inner">
-    <p class="truth-label">Brand truth</p>
-    <h2 class="truth-text">STOKADO exists because everyday shoes do the most work. They should be comfortable enough to repeat, durable enough to trust, and priced for real life.</h2>
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="mtrack">
+    <span>COMFORT</span>
+    <span>DURABILITY</span>
+    <span>AFFORDABILITY</span>
+    <span>FILIPINO LIFE</span>
+    <span>EVERYDAY FOOTWEAR</span>
+    <span>DAILY MOVEMENT</span>
+    <span>STOKADO PHILIPPINES</span>
+    <span>MADE FOR EVERYDAY</span>
+    <span>COMFORT</span>
+    <span>DURABILITY</span>
+    <span>AFFORDABILITY</span>
+    <span>FILIPINO LIFE</span>
+    <span>EVERYDAY FOOTWEAR</span>
+    <span>DAILY MOVEMENT</span>
+    <span>STOKADO PHILIPPINES</span>
+    <span>MADE FOR EVERYDAY</span>
   </div>
-  <div class="truth-points">
-    <div class="truth-point"><strong>Comfort</strong><span>Built for long hours on foot, not only short try-ons.</span></div>
-    <div class="truth-point"><strong>Durability</strong><span>Made for daily routes, rough surfaces, and repeated wear.</span></div>
-    <div class="truth-point"><strong>Affordability</strong><span>Honest pricing for people who need shoes they can actually use.</span></div>
-    <div class="truth-point"><strong>Everyday usability</strong><span>Easy to wear across campus, commute, mall, work, and weekend plans.</span></div>
+</div>
+
+<!-- WHY STOKADO -->
+<section class="beliefs" id="why">
+  <h2 class="beliefs-heading">WHY<br><em>STOKADO</em></h2>
+  <div class="beliefs-grid">
+    <div class="belief"><span class="belief-tag">Comfort</span><h3 class="belief-title">For everyday use.</h3><p class="belief-body">Shoes should feel good through commutes, school days, work hours, errands, and weekends. STOKADO is made for the repeat days, not just the first wear.</p></div>
+    <div class="belief"><span class="belief-tag">Durability</span><h3 class="belief-title">Built for real movement.</h3><p class="belief-body">Everyday footwear has to handle walking, waiting, riding, working, and repeated wear. We focus on materials and construction that hold up to daily Filipino life.</p></div>
+    <div class="belief"><span class="belief-tag">Affordability</span><h3 class="belief-title">Honest price, better value.</h3><p class="belief-body">Good shoes should not feel out of reach. STOKADO keeps the focus on comfort, durability, and practical design instead of unnecessary hype or inflated markups.</p></div>
   </div>
 </section>
 
@@ -650,36 +873,130 @@ footer{background:var(--ink);color:var(--white);padding:64px 40px 32px;}
 const isMobile = () => window.innerWidth <= 960;
 
 (async () => {
-  const { products, filterProducts, renderProductCard, productTitle, productTypeLabel, checkoutName, productImage, injectProductSchema } = await STOKADO.load();
+  const { products, filterProducts, renderProductCard, productTitle, checkoutName, productImage, injectProductSchema } = await STOKADO.load();
   injectProductSchema(products);
-  const heroProduct = products.find(p => p.hero) || products[0];
-  if (heroProduct) {
-    const img = productImage(heroProduct);
-    document.getElementById('heroImg').src = img;
-    document.getElementById('heroImg').alt = `${productTitle(heroProduct)} ${heroProduct.colorway}`;
-    document.getElementById('heroPrice').textContent = `₱ ${heroProduct.price.toLocaleString()}`;
-    document.getElementById('heroName').textContent = productTitle(heroProduct);
-    document.getElementById('heroSub').textContent = `${productTypeLabel(heroProduct)} · ${heroProduct.colorway}`;
+  const featuredProducts = filterProducts(products, { featured: true });
+  const featuredForms = [
+    {
+      id: 'daily-commute',
+      index: '01',
+      name: 'Morning Rush Form',
+      productId: 't901-black-white',
+      focus: 'First walk, transport, city heat',
+      behavior: 'The city starts early. STOKADO moves through the first walk, the ride, the wait, and the hours that follow.',
+      mood: 'Reliability in motion'
+    },
+    {
+      id: 'campus-movement',
+      index: '02',
+      name: 'Quiet Campus Flow Form',
+      productId: 't903-white-gum',
+      focus: 'Long corridors, light hours, easy pace',
+      behavior: 'Between class, friends, food runs, and slow walks across campus, the day moves without needing to announce itself.',
+      mood: 'Ease without noise'
+    },
+    {
+      id: 'weekend-minimal',
+      index: '03',
+      name: 'Weekend Slow Form',
+      productId: 's900-white',
+      focus: 'Mall hours, casual routes, open afternoons',
+      behavior: 'The pace drops. The shoe stays clean, relaxed, and present through errands, meetups, and unplanned hours.',
+      mood: 'Calm carried lightly'
+    }
+  ];
+
+  const sizeRange = product => {
+    const sizes = product.sizes || [];
+    if (!sizes.length) return 'EU';
+    return `EU ${Math.min(...sizes)}–${Math.max(...sizes)}`;
+  };
+
+  const colorToken = colorway => {
+    const color = colorway.toLowerCase();
+    if (color.includes('black')) return '#1F1F1F';
+    if (color.includes('denim')) return '#4A6A96';
+    if (color.includes('gum')) return '#C79A61';
+    return '#F7F7F5';
+  };
+
+  const productForForm = form => products.find(product => product.id === form.productId) || featuredProducts[0] || products[0];
+
+  const renderFeaturedSelector = activeId => {
+    const selector = document.getElementById('featuredSelector');
+    if (!selector) return;
+    selector.innerHTML = featuredForms.map(form => `
+      <button class="featured-choice${form.id === activeId ? ' active' : ''}" type="button" data-form-id="${form.id}" aria-pressed="${form.id === activeId}">
+        <span class="featured-choice-index">${form.index}</span>
+        <span>
+          <span class="featured-choice-model">${form.name}</span>
+          <span class="featured-choice-color">${form.focus}</span>
+        </span>
+      </button>
+    `).join('');
+  };
+
+  const setFeaturedForm = form => {
+    if (!form) return;
+    const product = productForForm(form);
+    if (!product) return;
+    const img = productImage(product);
+    const imgEl = document.getElementById('heroImg');
+    const productLabel = productTitle(product);
+    const range = sizeRange(product);
+    const sceneWrap = document.getElementById('sceneWrap');
+    const productCanvas = document.getElementById('featured');
+
+    sceneWrap.classList.add('is-shifting');
+    productCanvas.classList.add('is-shifting');
+
+    document.querySelector('#featured .product-canvas-sub').textContent = form.name;
+    document.querySelector('#featured .product-canvas-copy').textContent = `Living Pattern - ${form.behavior}`;
+    document.getElementById('heroPrice').innerHTML = `<span>Everyday Reality</span>₱ ${product.price.toLocaleString()}`;
+    document.getElementById('heroName').textContent = form.name;
+    document.getElementById('heroSub').textContent = `${productLabel} · ${product.colorway}`;
+    document.getElementById('featuredStatLabel').textContent = 'Natural Movement';
+    document.getElementById('featuredStatSize').innerHTML = range.replace(' ', '<br>');
+    document.getElementById('featuredStatType').textContent = form.mood;
+    document.getElementById('heroSizeTitle').textContent = `Natural Movement ${range}`;
+
+    if (imgEl.src !== new URL(img, window.location.href).href) {
+      imgEl.style.opacity = '.18';
+      window.setTimeout(() => {
+        imgEl.src = img;
+        imgEl.alt = `${form.name} represented by ${productLabel} ${product.colorway}`;
+        imgEl.style.opacity = '1';
+      }, 180);
+    } else {
+      imgEl.alt = `${form.name} represented by ${productLabel} ${product.colorway}`;
+    }
+
     const btn = document.getElementById('heroAddBtn');
-    btn.dataset.itemId = heroProduct.id;
-    btn.dataset.itemPrice = heroProduct.price;
-    btn.dataset.itemName = checkoutName(heroProduct);
+    btn.dataset.itemId = product.id;
+    btn.dataset.itemPrice = product.price;
+    btn.dataset.itemName = checkoutName(product);
     btn.dataset.itemImage = img;
-    btn.dataset.itemCustom1Options = heroProduct.sizes.join('|');
-    const szGrid = document.getElementById('heroSizes');
-    szGrid.innerHTML = heroProduct.sizes.slice(0,6).map((s,i) =>
-      `<div class="sz-btn${i===1?' active':''}">${s}</div>`).join('');
-    const variants = products.filter(p => p.model === heroProduct.model);
-    document.getElementById('heroDots').innerHTML = variants.map((v,i) => {
-      const bg = v.colorway.toLowerCase().includes('black') ? '#1F1F1F'
-               : v.colorway.toLowerCase().includes('denim') ? '#4A6A96' : '#F7F7F5';
-      return `<div class="cdot${i===0?' active':''}" style="background:${bg}" data-product-id="${v.id}" title="${v.colorway}"></div>`;
-    }).join('');
-  }
-  const featured = filterProducts(products, { featured: true });
-  document.getElementById('productCount').textContent = `SS 2025 — ${featured.length} Styles`;
+    btn.dataset.itemCustom1Options = product.sizes.join('|');
+
+    document.getElementById('heroSizes').innerHTML = product.sizes.slice(0,6).map((size,index) =>
+      `<div class="sz-btn${index === 1 ? ' active' : ''}">${size}</div>`).join('');
+    document.getElementById('heroDots').innerHTML = `<span class="cdot active" style="background:${colorToken(product.colorway)}" title="${product.colorway}" aria-label="${product.colorway}"></span>`;
+    document.querySelectorAll('.featured-choice').forEach(choice => {
+      const active = choice.dataset.formId === form.id;
+      choice.classList.toggle('active', active);
+      choice.setAttribute('aria-pressed', active);
+    });
+    window.setTimeout(() => {
+      sceneWrap.classList.remove('is-shifting');
+      productCanvas.classList.remove('is-shifting');
+    }, 360);
+  };
+
+  renderFeaturedSelector(featuredForms[0].id);
+  setFeaturedForm(featuredForms[0]);
+  document.getElementById('productCount').textContent = `SS 2025 — ${featuredProducts.length} Styles`;
   const grid = document.getElementById('productGrid');
-  grid.innerHTML = featured.map(renderProductCard).join('');
+  grid.innerHTML = featuredProducts.map(renderProductCard).join('');
   setTimeout(() => grid.querySelectorAll('.pcard').forEach(c => c.classList.add('visible')), 50);
 
   document.getElementById('filterBar').addEventListener('click', e => {
@@ -693,27 +1010,78 @@ const isMobile = () => window.innerWidth <= 960;
     setTimeout(() => grid.querySelectorAll('.pcard').forEach(c => c.classList.add('visible')), 50);
   });
 
-  document.getElementById('heroDots').addEventListener('click', e => {
-    const dot = e.target.closest('.cdot');
-    if (!dot) return;
-    document.querySelectorAll('.cdot').forEach(d => d.classList.remove('active'));
-    dot.classList.add('active');
-    const p = products.find(x => x.id === dot.dataset.productId);
-    if (!p) return;
-    const img = productImage(p);
-    document.getElementById('heroImg').src = img;
-    document.getElementById('heroImg').alt = `${productTitle(p)} ${p.colorway}`;
-    document.getElementById('heroPrice').textContent = `₱ ${p.price.toLocaleString()}`;
-    document.getElementById('heroName').textContent = productTitle(p);
-    document.getElementById('heroSub').textContent = `${productTypeLabel(p)} · ${p.colorway}`;
-    const btn = document.getElementById('heroAddBtn');
-    btn.dataset.itemId = p.id;
-    btn.dataset.itemPrice = p.price;
-    btn.dataset.itemName = checkoutName(p);
-    btn.dataset.itemImage = img;
-    btn.dataset.itemCustom1Options = p.sizes.join('|');
+  document.getElementById('featuredSelector').addEventListener('click', e => {
+    const choice = e.target.closest('.featured-choice');
+    if (!choice) return;
+    const form = featuredForms.find(item => item.id === choice.dataset.formId);
+    setFeaturedForm(form);
   });
+  const featuredMainCard = document.querySelector('#featured .hcard-main');
+  if (featuredMainCard) {
+    const reveal = () => featuredMainCard.classList.add('mobile-visible');
+    if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            reveal();
+            observer.disconnect();
+          }
+        });
+      }, { threshold: .24 });
+      observer.observe(featuredMainCard);
+    } else {
+      reveal();
+    }
+
+    const resetTouchTilt = () => {
+      featuredMainCard.classList.remove('is-touching');
+      featuredMainCard.style.removeProperty('--mobile-card-transform');
+      const img = featuredMainCard.querySelector('.hcard-main-img');
+      if (img) img.style.transform = '';
+    };
+
+    featuredMainCard.addEventListener('touchmove', e => {
+      if (!isMobile() || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      const touch = e.touches[0];
+      if (!touch) return;
+      const rect = featuredMainCard.getBoundingClientRect();
+      const x = (touch.clientX - rect.left) / rect.width - .5;
+      const y = (touch.clientY - rect.top) / rect.height - .5;
+      const tiltX = Math.max(-4, Math.min(4, y * -8));
+      const tiltY = Math.max(-4, Math.min(4, x * 8));
+      featuredMainCard.classList.add('is-touching');
+      featuredMainCard.style.setProperty('--mobile-card-transform', `perspective(700px) rotateX(${tiltX}deg) rotateY(${tiltY}deg)`);
+      const img = featuredMainCard.querySelector('.hcard-main-img');
+      if (img) img.style.transform = `translate(${x * 8}px, ${y * 6}px) scale(1.02)`;
+    }, { passive: true });
+    featuredMainCard.addEventListener('touchend', resetTouchTilt);
+    featuredMainCard.addEventListener('touchcancel', resetTouchTilt);
+  }
 })();
+
+// Hero parallax — desktop only
+const hero3dWrap = document.getElementById('hero3dWrap');
+const hero3dScene = document.getElementById('hero3dScene');
+if (hero3dWrap && hero3dScene) {
+  let hTX = 0, hTY = 0, hCX = 0, hCY = 0;
+  hero3dWrap.addEventListener('mousemove', e => {
+    if (isMobile()) return;
+    const r = hero3dWrap.getBoundingClientRect();
+    hTX = ((e.clientX - r.left) / r.width - .5) * 10;
+    hTY = ((e.clientY - r.top) / r.height - .5) * -8;
+  });
+  hero3dWrap.addEventListener('mouseleave', () => { hTX = 0; hTY = 0; });
+  (function heroRaf(){
+    if (!isMobile()) {
+      hCX += (hTX - hCX) * .08;
+      hCY += (hTY - hCY) * .08;
+      hero3dScene.style.transform = `rotateY(${hCX}deg) rotateX(${hCY}deg)`;
+    } else {
+      hero3dScene.style.transform = '';
+    }
+    requestAnimationFrame(heroRaf);
+  })();
+}
 
 // 3D parallax — desktop only
 const scene = document.getElementById('heroScene');
