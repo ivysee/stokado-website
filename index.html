@@ -1,13 +1,1185 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>E-commerce Copy Manager</title>
-    <script type="module" crossorigin src="/assets/index-BWbmkan3.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Cqz1vP04.css">
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STOKADO — Everyday Footwear for Filipino Life</title>
+<meta name="description" content="STOKADO is a footwear brand in the Philippines making everyday sneakers and slip-ons for Filipino life: comfortable, durable, and honestly priced.">
+<meta property="og:title" content="STOKADO — Everyday Footwear for Filipino Life">
+<meta property="og:description" content="A Philippine footwear brand for everyday comfort, durability, and honest pricing.">
+<meta property="og:url" content="https://stokadoofficial.com">
+<link rel="canonical" href="https://stokadoofficial.com">
+<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.5/default/snipcart.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+  {"@type":["Organization","Brand"],"additionalType":"FootwearBrand","@id":"https://stokadoofficial.com/#organization","name":"STOKADO","legalName":"STOKADO","url":"https://stokadoofficial.com","description":"STOKADO is a footwear brand in the Philippines making everyday sneakers and slip-ons for Filipino life.","foundingCountry":"PH","areaServed":["PH","SG","MY","ID","TH","VN"],"knowsAbout":["Footwear","Everyday sneakers","Philippine footwear","Affordable shoes","Comfort shoes"],"slogan":"Everyday footwear for Filipino life.","brand":{"@type":"Brand","name":"STOKADO","slogan":"Everyday footwear for Filipino life."},"sameAs":["https://www.instagram.com/stokado.ph?igsh=bXNrYnRmeXB6eDlq&utm_source=qr","https://www.facebook.com/share/1MKjm81msH/?mibextid=wwXIfr","https://www.tiktok.com/@stokado_ph?_r=1&_t=ZS-97SA20Hgr3w","https://ph.shp.ee/EWtFFwnP","https://s.lazada.com.ph/s.Zgkf5u"]},
+  {"@type":"WebSite","@id":"https://stokadoofficial.com/#website","url":"https://stokadoofficial.com","name":"STOKADO Official","description":"Official website of STOKADO, a Philippine footwear brand.","publisher":{"@id":"https://stokadoofficial.com/#organization"}}
+]}
+</script>
+<style>
+:root{
+  --white:#F7F7F5;
+  --stone:#D9D9D6;
+  --ink:#1F1F1F;
+  --ink-50:rgba(31,31,31,.5);
+  --ink-20:rgba(31,31,31,.2);
+  --ink-08:rgba(31,31,31,.08);
+  --navy:#1E2A38;
+  --ff-serif:'Cormorant Garamond',Georgia,serif;
+  --ff-sans:'DM Sans',system-ui,sans-serif;
+  --ease:cubic-bezier(.25,.1,.25,1);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden;}
+body{background:var(--white);color:var(--ink);font-family:var(--ff-sans);-webkit-font-smoothing:antialiased;max-width:100%;overflow-x:hidden;}
+img{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+button{font-family:var(--ff-sans);cursor:pointer;border:none;background:none;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:90;height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 40px;background:rgba(247,247,245,.96);backdrop-filter:blur(16px);border-bottom:1px solid var(--ink-08);}
+.nav-logo{font-size:11px;font-weight:500;letter-spacing:7px;text-transform:uppercase;}
+.nav-links{display:flex;gap:32px;}
+.nav-links a{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-50);transition:color .2s;}
+.nav-links a:hover{color:var(--ink);}
+.nav-right{display:flex;align-items:center;gap:16px;}
+.nav-cart{font-size:10px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--ink-20);padding:7px 18px;transition:all .2s;color:var(--ink);}
+.nav-cart:hover{background:var(--ink);color:var(--white);}
+.nav-ham{display:none;flex-direction:column;gap:5px;}
+.nav-ham span{width:20px;height:1px;background:var(--ink);display:block;}
+
+/* ── HERO (Brand first) ── */
+.hero{
+  min-height:calc(100vh - 54px);
+  display:grid;grid-template-columns:1fr 1fr;
+  border-bottom:1px solid var(--ink-08);
+}
+.hero-left{
+  padding:80px 56px 64px 40px;
+  display:flex;flex-direction:column;justify-content:space-between;
+  border-right:1px solid var(--ink-08);
+}
+.hero-eyebrow{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--ink-20);}
+.hero-heading{
+  font-family:var(--ff-serif);
+  font-size:clamp(64px,8vw,120px);
+  font-weight:300;line-height:.92;
+  letter-spacing:-3px;
+  margin-top:40px;
+}
+.hero-heading em{font-style:italic;color:var(--navy);}
+.hero-tagline{
+  margin-top:20px;font-size:10px;
+  letter-spacing:3px;text-transform:uppercase;color:var(--ink-50);
+}
+.hero-body{margin-top:auto;padding-top:48px;}
+.hero-desc{font-size:13px;color:var(--ink-50);line-height:1.9;max-width:380px;margin-bottom:34px;}
+.hero-price{font-family:var(--ff-serif);font-size:clamp(40px,5vw,72px);font-weight:300;line-height:1;margin-bottom:24px;}
+.hero-product-name{font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:var(--ink);margin-bottom:8px;}
+.hero-product-type{font-size:12px;color:var(--ink-50);line-height:1.6;margin-bottom:20px;}
+.hero-actions{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin-bottom:34px;}
+.btn-dark{background:var(--ink);color:var(--white);font-size:10px;letter-spacing:2px;text-transform:uppercase;padding:14px 34px;transition:background .2s;display:inline-block;}
+.btn-dark:hover{background:var(--navy);}
+.btn-outline{font-size:10px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--ink-20);padding:13px 24px;color:var(--ink);transition:all .2s;display:inline-block;}
+.btn-outline:hover{background:var(--ink);color:var(--white);}
+.hero-meta{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-20);display:flex;gap:20px;flex-wrap:wrap;}
+.hero-right{
+  background:var(--stone);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;padding:64px 48px;
+  perspective:1100px;
+  perspective-origin:50% 45%;
+}
+.hero-statement{
+  font-family:var(--ff-serif);
+  font-size:clamp(34px,4vw,58px);
+  font-weight:300;
+  line-height:1.06;
+  letter-spacing:-1px;
+  max-width:520px;
+  margin-top:18px;
+}
+.hero-shoe-wrap{width:100%;max-width:620px;position:relative;z-index:2;}
+.hero-scene{
+  width:min(100%,620px);
+  min-height:560px;
+  position:relative;
+  transform-style:preserve-3d;
+  transition:transform .18s ease-out;
+}
+.hero-panel{
+  position:absolute;
+  inset:46px 26px 58px;
+  background:linear-gradient(145deg,rgba(247,247,245,.58),rgba(217,217,214,.92));
+  border:1px solid rgba(31,31,31,.08);
+  transform:translateZ(-70px) rotateY(-3deg);
+}
+.hero-wordmark{
+  position:absolute;
+  left:50%;
+  top:45%;
+  transform:translate(-50%,-50%) translateZ(-28px);
+  font-size:clamp(52px,8vw,112px);
+  font-weight:500;
+  letter-spacing:12px;
+  text-transform:uppercase;
+  color:rgba(31,31,31,.06);
+  white-space:nowrap;
+  pointer-events:none;
+}
+.hero-product{
+  position:absolute;
+  left:50%;
+  top:48%;
+  width:min(88%,540px);
+  transform:translate(-50%,-50%) translateZ(96px) rotate(-7deg);
+  filter:drop-shadow(0 34px 30px rgba(31,31,31,.18));
+  transition:transform .7s var(--ease);
+  z-index:4;
+}
+.hero-scene:hover .hero-product{transform:translate(-50%,-51%) translateZ(118px) rotate(-4deg);}
+.hero-product img{width:100%;object-fit:contain;mix-blend-mode:multiply;}
+.hero-shadow{
+  position:absolute;
+  left:50%;
+  top:68%;
+  width:58%;
+  height:42px;
+  transform:translateX(-50%) translateZ(10px) rotateX(72deg);
+  background:radial-gradient(ellipse,rgba(31,31,31,.24) 0%,rgba(31,31,31,.08) 46%,rgba(31,31,31,0) 72%);
+  filter:blur(8px);
+  z-index:2;
+}
+.hero-float-card{
+  position:absolute;
+  background:rgba(247,247,245,.9);
+  border:1px solid rgba(31,31,31,.1);
+  box-shadow:0 18px 48px rgba(31,31,31,.08);
+  backdrop-filter:blur(12px);
+  z-index:5;
+}
+.hero-info-card{
+  left:42px;
+  bottom:92px;
+  width:190px;
+  padding:18px 18px 16px;
+  transform:translateZ(150px) rotateY(8deg);
+}
+.hero-size-card{
+  right:40px;
+  top:102px;
+  width:138px;
+  padding:16px;
+  transform:translateZ(128px) rotateY(-9deg);
+}
+.hero-card-label{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-50);margin-bottom:9px;}
+.hero-card-title{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;margin-bottom:4px;}
+.hero-card-sub{font-size:11px;color:var(--ink-50);line-height:1.6;}
+.hero-card-price{font-family:var(--ff-serif);font-size:28px;font-weight:300;line-height:1;margin-bottom:10px;}
+.hero-caption{position:absolute;bottom:28px;right:24px;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(31,31,31,.3);writing-mode:vertical-rl;}
+.hero-navy-bar{position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--navy);}
+
+/* VALUE STRIP */
+.value-strip{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:1px solid var(--ink-08);background:var(--white);}
+.value-item{padding:20px 40px;border-right:1px solid var(--ink-08);font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:var(--ink);}
+.value-item:last-child{border-right:none;}
+
+/* CONTEXT FORMS */
+.context-forms{padding:56px 40px;border-bottom:1px solid var(--ink-08);background:var(--stone);color:rgba(31,31,31,.42);}
+.context-forms-title{font-size:9px;letter-spacing:3px;text-transform:uppercase;margin-bottom:24px;color:rgba(31,31,31,.32);}
+.context-forms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(31,31,31,.08);}
+.context-form{background:var(--stone);padding:24px 22px;min-height:120px;}
+.context-form span{display:block;font-family:var(--ff-serif);font-size:32px;font-weight:300;line-height:1;color:rgba(31,31,31,.18);margin-bottom:18px;}
+.context-form strong{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(31,31,31,.5);margin-bottom:8px;}
+.context-form p{font-size:11px;line-height:1.7;max-width:220px;}
+
+/* ── 3D PRODUCT CANVAS ── */
+.product-canvas{
+  background:
+    radial-gradient(circle at 50% 47%,rgba(247,247,245,.18) 0%,rgba(97,111,124,.16) 24%,rgba(30,42,56,.88) 58%,#202933 100%),
+    linear-gradient(145deg,#303b46 0%,#202933 54%,#171f27 100%);
+  padding:80px 40px;
+  border-bottom:1px solid rgba(247,247,245,.08);
+  color:var(--white);
+  overflow:hidden;
+}
+.product-canvas-header{
+  display:flex;align-items:baseline;justify-content:space-between;
+  border-bottom:1px solid rgba(247,247,245,.12);
+  padding-bottom:20px;margin-bottom:18px;
+}
+.product-canvas-title{font-family:var(--ff-serif);font-size:clamp(24px,3vw,36px);font-weight:300;color:var(--white);}
+.product-canvas-sub{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(247,247,245,.52);}
+.product-canvas-copy{font-size:13px;color:rgba(247,247,245,.58);line-height:1.8;max-width:520px;margin-bottom:32px;transition:opacity .28s ease,transform .28s ease;}
+.featured-selector{display:flex;gap:1px;margin:36px auto 0;max-width:760px;justify-content:center;background:rgba(247,247,245,.08);border:1px solid rgba(247,247,245,.1);}
+.featured-choice{background:rgba(247,247,245,.035);padding:12px 14px;display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;align-items:center;text-align:left;min-width:144px;border-right:1px solid rgba(247,247,245,.08);opacity:.58;transition:opacity .24s ease,background .24s ease,border-color .24s ease;cursor:pointer;color:var(--white);}
+.featured-choice:last-child{border-right:none;}
+.featured-choice:hover,.featured-choice.active{opacity:1;background:rgba(247,247,245,.12);}
+.featured-choice.active{box-shadow:inset 0 -2px 0 rgba(247,247,245,.42);}
+.featured-choice-img{width:40px;height:40px;object-fit:contain;filter:drop-shadow(0 10px 10px rgba(5,8,12,.28));}
+.featured-choice-model{display:block;font-size:9px;letter-spacing:1.6px;text-transform:uppercase;color:rgba(247,247,245,.92);margin-bottom:4px;white-space:nowrap;}
+.featured-choice-color{display:block;font-size:10px;color:rgba(247,247,245,.48);line-height:1.35;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:96px;}
+
+/* 3D scene */
+.scene-wrap{
+  perspective:1200px;
+  perspective-origin:50% 40%;
+  display:flex;align-items:center;justify-content:center;
+  min-height:500px;
+  position:relative;
+}
+.scene-wrap::before{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:45%;
+  width:min(72vw,680px);
+  height:min(72vw,560px);
+  transform:translate(-50%,-50%);
+  background:
+    radial-gradient(circle,rgba(247,247,245,.34) 0%,rgba(217,217,214,.18) 24%,rgba(97,111,124,.08) 44%,rgba(15,23,31,0) 70%);
+  filter:blur(10px);
+  opacity:.95;
+  pointer-events:none;
+}
+.scene-wrap::after{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:69%;
+  width:min(58vw,460px);
+  height:76px;
+  transform:translateX(-50%) rotateX(68deg);
+  background:radial-gradient(ellipse,rgba(8,12,16,.42) 0%,rgba(8,12,16,.2) 48%,rgba(8,12,16,0) 74%);
+  filter:blur(14px);
+  pointer-events:none;
+}
+.scene-wrap.is-shifting .scene{opacity:.34;transform:scale(.985) rotateX(1deg);}
+.scene-wrap.is-shifting ~ *,.product-canvas.is-shifting .product-canvas-copy{opacity:.45;transform:translateY(4px);}
+.scene{
+  position:relative;
+  width:100%;max-width:860px;
+  height:480px;
+  transform-style:preserve-3d;
+  transition:opacity .34s ease,transform .34s ease;
+}
+.hcard{
+  position:absolute;background:rgba(247,247,245,.9);
+  transform-style:preserve-3d;
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease);
+  cursor:default;will-change:transform;
+}
+.hcard:hover{box-shadow:0 28px 60px rgba(7,12,18,.28);}
+
+.hcard-main{width:330px;left:50%;top:18px;margin-left:-165px;padding:24px 20px 18px;background:rgba(247,247,245,.08);box-shadow:none;transform:rotateY(-8deg) rotateX(5deg) translateZ(18px);z-index:10;}
+.hcard-main::before{
+  content:'';
+  position:absolute;
+  inset:18px 8px 62px;
+  background:radial-gradient(circle at 50% 48%,rgba(247,247,245,.26),rgba(247,247,245,.08) 46%,rgba(247,247,245,0) 72%);
+  border-radius:50%;
+  filter:blur(18px);
+  pointer-events:none;
+  z-index:0;
+}
+.hcard-main::after{
+  content:'';
+  position:absolute;
+  left:50%;
+  top:67%;
+  width:74%;
+  height:52px;
+  transform:translateX(-50%);
+  background:radial-gradient(ellipse,rgba(5,8,12,.42) 0%,rgba(5,8,12,.2) 48%,rgba(5,8,12,0) 76%);
+  filter:blur(12px);
+  pointer-events:none;
+  z-index:0;
+  transition:opacity .45s var(--ease),transform .45s var(--ease);
+}
+.hcard-main:hover{transform:rotateY(2deg) rotateX(-2deg) translateY(-12px) translateZ(34px) scale(1.045);}
+.hcard-main:hover::after{opacity:.78;transform:translateX(-50%) translateY(14px) scale(1.12);}
+.hcard-main-img{position:relative;z-index:1;width:100%;aspect-ratio:1;object-fit:contain;mix-blend-mode:normal;filter:drop-shadow(0 34px 28px rgba(5,8,12,.34));transition:opacity .24s ease,transform .65s var(--ease),filter .65s var(--ease);}
+.hcard-main:hover .hcard-main-img{transform:scale(1.09) rotate(-3deg) translateY(-8px);filter:drop-shadow(0 48px 36px rgba(5,8,12,.44));}
+.hcard-price{position:absolute;top:12px;right:12px;background:var(--navy);color:var(--white);font-size:11px;font-weight:500;padding:7px 12px;letter-spacing:.5px;text-align:right;line-height:1.25;}
+.hcard-price span{display:block;font-size:7px;letter-spacing:1.4px;text-transform:uppercase;color:rgba(247,247,245,.48);margin-bottom:2px;}
+.hcard-label{position:relative;z-index:2;margin-top:10px;color:var(--white);}
+.hcard-label h2{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(247,247,245,.92);}
+.hcard-label p{font-size:10px;color:rgba(247,247,245,.56);margin-top:3px;}
+
+.hcard-stat{width:150px;left:28px;top:180px;padding:18px;background:rgba(247,247,245,.1);border:1px solid rgba(247,247,245,.14);color:var(--white);backdrop-filter:blur(12px);transform:rotateY(14deg) rotateX(-4deg) rotateZ(1deg);z-index:8;}
+.hcard-stat:hover{transform:rotateY(4deg) rotateX(0) rotateZ(0);}
+.hcard-stat-lbl{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:rgba(247,247,245,.4);margin-bottom:8px;}
+.hcard-stat-num{font-family:var(--ff-serif);font-size:36px;font-weight:300;line-height:1;color:var(--white);}
+.hcard-stat-sub{font-size:9px;color:rgba(247,247,245,.3);margin-top:8px;}
+
+.hcard-opts{width:140px;right:28px;top:165px;padding:16px;background:rgba(247,247,245,.88);transform:rotateY(-16deg) rotateX(6deg) rotateZ(-2deg);z-index:9;}
+.hcard-opts:hover{transform:rotateY(-4deg) rotateX(0) rotateZ(0);}
+.hcard-opts-title{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-50);margin-bottom:10px;}
+.dot-row{display:flex;gap:8px;margin-bottom:12px;}
+.cdot{width:16px;height:16px;border-radius:50%;border:2px solid var(--ink-20);cursor:pointer;transition:border-color .2s;}
+.cdot.active{border-color:var(--ink);}
+.sz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;}
+.sz-btn{font-size:8px;font-weight:500;padding:5px 0;text-align:center;background:var(--stone);color:var(--ink);cursor:pointer;transition:background .15s,color .15s;}
+.sz-btn.active{background:var(--navy);color:var(--white);}
+.sz-btn:hover:not(.active){background:var(--ink);color:var(--white);}
+
+.hcard-cta{width:270px;left:50%;margin-left:-135px;top:432px;padding:14px 18px;display:flex;align-items:center;gap:10px;background:rgba(247,247,245,.9);transform:rotateX(22deg) rotateY(-2deg);z-index:7;}
+.hcard-cta:hover{transform:rotateX(6deg) rotateY(0);}
+.cta-add{flex:1;background:var(--ink);color:var(--white);font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:11px;transition:background .2s;}
+.cta-add:hover{background:var(--navy);}
+.cta-wish{width:38px;height:38px;border:1px solid var(--ink-20);display:flex;align-items:center;justify-content:center;font-size:15px;transition:border-color .2s;flex-shrink:0;}
+.cta-wish:hover{border-color:var(--ink);}
+.scene-aside{position:absolute;font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,247,245,.26);white-space:nowrap;}
+.scene-aside.l{left:0;top:50%;transform:translateY(-50%) rotate(-90deg);}
+.scene-aside.r{right:0;top:50%;transform:translateY(-50%) rotate(90deg);}
+
+/* MARQUEE */
+.marquee{background:var(--navy);padding:11px 0;overflow:hidden;}
+.mtrack{display:flex;gap:92px;animation:mscroll 30s linear infinite;white-space:nowrap;}
+.mtrack span{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,247,245,.46);flex-shrink:0;}
+@keyframes mscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+.sec{padding:80px 40px;}
+.sec-hd{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid var(--ink-08);padding-bottom:20px;margin-bottom:48px;}
+.sec-title{font-family:var(--ff-serif);font-size:clamp(26px,3vw,38px);font-weight:300;}
+.sec-action{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-50);}
+.filter-bar{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap;}
+.filter-btn{font-size:9px;letter-spacing:2px;text-transform:uppercase;padding:7px 16px;border:1px solid var(--ink-20);color:var(--ink-50);cursor:pointer;background:none;transition:all .2s;}
+.filter-btn:hover,.filter-btn.active{background:var(--ink);color:var(--white);border-color:var(--ink);}
+
+/* REAL LIFE */
+.life{padding:80px 40px;border-bottom:1px solid var(--ink-08);background:var(--white);}
+.life-intro{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:end;border-bottom:1px solid var(--ink-08);padding-bottom:32px;margin-bottom:1px;}
+.life-kicker{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--navy);margin-bottom:18px;}
+.life-title{font-family:var(--ff-serif);font-size:clamp(32px,4vw,56px);font-weight:300;line-height:1.05;}
+.life-copy{font-size:13px;color:var(--ink-50);line-height:1.9;max-width:420px;}
+.life-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink-08);}
+.life-card{background:var(--white);padding:28px 24px;min-height:150px;display:flex;flex-direction:column;justify-content:space-between;}
+.life-place{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--ink-20);margin-bottom:28px;}
+.life-line{font-family:var(--ff-serif);font-size:22px;font-weight:300;line-height:1.25;margin-bottom:12px;}
+.life-note{font-size:11px;color:var(--ink-50);line-height:1.8;}
+
+/* BRAND TRUTH */
+.truth{padding:64px 40px;border-bottom:1px solid var(--ink-08);background:var(--stone);}
+.truth-inner{display:grid;grid-template-columns:1fr 2fr;gap:64px;align-items:start;}
+.truth-label{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--navy);}
+.truth-text{font-family:var(--ff-serif);font-size:clamp(28px,3.2vw,44px);font-weight:300;line-height:1.18;max-width:820px;}
+.truth-points{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(31,31,31,.12);margin-top:40px;}
+.truth-point{background:var(--stone);padding:22px 20px;}
+.truth-point strong{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;}
+.truth-point span{font-size:11px;color:var(--ink-50);line-height:1.7;}
+
+/* PRODUCT GRID */
+.grid-products{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1px;background:var(--ink-08);}
+.pcard{background:var(--white);position:relative;overflow:hidden;cursor:pointer;display:flex;flex-direction:column;opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease,background .2s;}
+.pcard.visible{opacity:1;transform:translateY(0);}
+.pcard:hover{background:#F0F0EE;}
+.pcard-visual{aspect-ratio:1;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--stone);padding:20px;transition:background .4s;}
+.pcard:hover .pcard-visual{background:#CCCCC8;}
+.pcard-visual img{width:90%;height:90%;object-fit:contain;mix-blend-mode:multiply;transition:transform .7s var(--ease);}
+.pcard:hover .pcard-visual img{transform:scale(1.07) rotate(-3deg);}
+.pcard-info{padding:20px 24px 28px;flex:1;display:flex;flex-direction:column;}
+.pcard-meta{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px;}
+.pcard-name{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--ink);}
+.pcard-gender{font-size:9px;letter-spacing:1px;text-transform:uppercase;color:var(--ink-20);}
+.pcard-category{font-size:10px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-50);margin-bottom:3px;}
+.pcard-variant{font-size:11px;color:var(--ink-50);}
+.pcard-lifestyle{font-size:10px;color:var(--ink-50);line-height:1.6;margin-top:8px;max-width:210px;margin-bottom:auto;}
+.pcard-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:20px;}
+.pcard-price{font-family:var(--ff-serif);font-size:22px;font-weight:300;}
+.pcard-add{font-size:9px;letter-spacing:2px;text-transform:uppercase;background:var(--ink);color:var(--white);padding:9px 18px;transition:background .2s;}
+.pcard-add:hover{background:var(--navy);}
+.pcard-badge{position:absolute;top:14px;left:14px;background:var(--navy);color:var(--white);font-size:8px;letter-spacing:2px;text-transform:uppercase;padding:4px 10px;}
+.skel{background:var(--stone);animation:pulse 1.5s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:.6}50%{opacity:1}}
+
+/* BELIEFS */
+.beliefs{background:var(--navy);color:var(--white);padding:96px 40px;}
+.beliefs-heading{font-family:var(--ff-serif);font-size:clamp(40px,6vw,88px);font-weight:300;line-height:.95;max-width:780px;margin-bottom:72px;letter-spacing:-1px;}
+.beliefs-heading em{font-style:italic;color:var(--stone);}
+.beliefs-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(247,247,245,.08);}
+.belief{padding:40px 32px 40px 0;border-right:1px solid rgba(247,247,245,.06);}
+.belief:last-child{border-right:none;}
+.belief-tag{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:18px;}
+.belief-title{font-family:var(--ff-serif);font-size:26px;font-weight:300;margin-bottom:14px;line-height:1.2;}
+.belief-body{font-size:12px;color:rgba(247,247,245,.58);line-height:1.9;}
+
+/* ABOUT */
+.about-split{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--ink-08);border-bottom:1px solid var(--ink-08);}
+.about-l{padding:80px 56px 80px 40px;border-right:1px solid var(--ink-08);display:flex;flex-direction:column;justify-content:space-between;}
+.about-eyebrow{font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--navy);margin-bottom:24px;}
+.about-heading{font-family:var(--ff-serif);font-size:clamp(32px,3.5vw,50px);font-weight:300;line-height:1.15;margin-bottom:24px;}
+.about-body{font-size:13px;color:var(--ink-50);line-height:1.95;max-width:420px;}
+.about-r{background:var(--stone);display:flex;align-items:center;justify-content:center;padding:60px;}
+.about-wordmark{font-size:clamp(32px,5vw,60px);font-weight:500;letter-spacing:12px;text-transform:uppercase;color:var(--ink);opacity:.08;}
+
+/* TRUST */
+.trust{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:1px solid var(--ink-08);}
+.trust-item{padding:28px 24px;border-right:1px solid var(--ink-08);}
+.trust-item:last-child{border-right:none;}
+.trust-icon{font-size:16px;margin-bottom:10px;}
+.trust-label{font-size:11px;font-weight:500;letter-spacing:.5px;margin-bottom:4px;}
+.trust-sub{font-size:10px;color:var(--ink-50);}
+
+/* JOURNAL */
+.journal{padding:80px 40px;background:var(--stone);}
+.journal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink-08);margin-top:48px;}
+.jcard{background:var(--white);overflow:hidden;}
+.jcard-img{aspect-ratio:16/9;background:var(--white);display:flex;align-items:center;justify-content:center;border-bottom:1px solid var(--ink-08);}
+.jcard-num{font-family:var(--ff-serif);font-size:48px;font-weight:300;color:var(--ink-08);}
+.jcard-body{padding:24px;}
+.jcard-tag{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);margin-bottom:10px;}
+.jcard-title{font-family:var(--ff-serif);font-size:20px;font-weight:300;line-height:1.3;margin-bottom:10px;}
+.jcard-excerpt{font-size:12px;color:var(--ink-50);line-height:1.8;}
+.jcard-link{display:inline-block;margin-top:16px;font-size:9px;letter-spacing:2px;text-transform:uppercase;border-bottom:1px solid var(--ink-20);padding-bottom:2px;}
+
+/* NEWSLETTER */
+.newsletter{background:var(--ink);color:var(--white);padding:80px 40px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:64px;}
+.nl-heading{font-family:var(--ff-serif);font-size:clamp(28px,3.5vw,48px);font-weight:300;line-height:1.2;}
+.nl-heading em{font-style:italic;color:var(--stone);}
+.nl-sub{font-size:12px;color:rgba(247,247,245,.4);margin-top:14px;line-height:1.8;}
+.nl-form{display:flex;flex-direction:column;gap:10px;}
+.nl-input{background:rgba(247,247,245,.05);border:1px solid rgba(247,247,245,.12);color:var(--white);padding:14px 18px;font-family:var(--ff-sans);font-size:13px;outline:none;transition:border .2s;}
+.nl-input::placeholder{color:rgba(247,247,245,.25);}
+.nl-input:focus{border-color:rgba(247,247,245,.35);}
+.nl-btn{background:var(--white);color:var(--ink);padding:13px;font-size:10px;letter-spacing:2px;text-transform:uppercase;font-weight:500;transition:background .2s;}
+.nl-btn:hover{background:var(--stone);}
+.nl-note{font-size:10px;color:rgba(247,247,245,.2);line-height:1.6;}
+
+/* CHANNELS */
+.channels{padding:80px 40px;}
+.channels-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--ink-08);margin-top:48px;}
+.chcard{background:var(--white);padding:32px 28px;transition:background .2s;}
+.chcard:hover{background:#F0F0EE;}
+.chcard-name{font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px;}
+.chcard-desc{font-size:12px;color:var(--ink-50);line-height:1.8;min-height:60px;}
+.chcard-cta{display:inline-flex;align-items:center;gap:8px;margin-top:20px;font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--navy);}
+.chcard-cta::after{content:'→';}
+
+/* FOOTER */
+footer{background:var(--ink);color:var(--white);padding:64px 40px 32px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid rgba(247,247,245,.06);}
+.footer-brand-name{font-size:11px;letter-spacing:6px;text-transform:uppercase;margin-bottom:12px;}
+.footer-tagline{font-family:var(--ff-serif);font-size:18px;font-weight:300;color:var(--stone);margin-bottom:14px;}
+.footer-desc{font-size:12px;color:rgba(247,247,245,.3);line-height:1.8;max-width:240px;}
+.footer-col-title{font-size:8px;letter-spacing:3px;text-transform:uppercase;color:rgba(247,247,245,.2);margin-bottom:18px;}
+.footer-col a{display:block;font-size:12px;color:rgba(247,247,245,.45);margin-bottom:11px;transition:color .2s;}
+.footer-col a:hover{color:var(--white);}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;flex-wrap:wrap;gap:12px;}
+.footer-copy{font-size:10px;color:rgba(247,247,245,.18);letter-spacing:.5px;}
+.footer-legal{display:flex;gap:20px;}
+.footer-legal a{font-size:10px;color:rgba(247,247,245,.18);transition:color .2s;}
+.footer-legal a:hover{color:rgba(247,247,245,.5);}
+
+/* SIZE MODAL */
+.overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(31,31,31,.6);align-items:center;justify-content:center;}
+.overlay.open{display:flex;}
+.modal{background:var(--white);width:90%;max-width:520px;padding:48px;position:relative;max-height:90vh;overflow-y:auto;}
+.modal-close{position:absolute;top:18px;right:18px;font-size:18px;color:var(--ink-50);cursor:pointer;}
+.modal-title{font-family:var(--ff-serif);font-size:30px;font-weight:300;margin-bottom:28px;}
+.sz-table{width:100%;border-collapse:collapse;font-size:12px;}
+.sz-table th{font-size:8px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-50);padding:8px 0;border-bottom:1px solid var(--ink-08);text-align:left;}
+.sz-table td{padding:10px 0;border-bottom:1px solid var(--ink-08);}
+.sz-note{margin-top:18px;font-size:11px;color:var(--ink-50);line-height:1.8;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  body > section,
+  body > div,
+  footer,
+  .nav,
+  .hero,
+  .hero-left,
+  .hero-right,
+  .product-canvas,
+  .scene-wrap,
+  .scene,
+  .sec,
+  .beliefs{
+    max-width:100%;
+    box-sizing:border-box;
+  }
+  .nav{padding:0 24px;}
+  .nav-links{display:none;}
+  .nav-ham{display:flex;}
+
+  /* Hero */
+  .hero{grid-template-columns:1fr;min-height:auto;}
+  .hero-left{padding:34px 24px 24px;border-right:none;border-bottom:1px solid var(--ink-08);}
+  .hero-body{padding-top:28px;}
+  .hero-desc{font-size:13px;line-height:1.7;max-width:340px;margin-bottom:22px;}
+  .hero-price{font-size:42px;margin-bottom:18px;}
+  .hero-actions{gap:10px;margin-bottom:22px;}
+  .hero-actions .btn-dark,
+  .hero-actions .btn-outline{padding:12px 18px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;}
+  .hero-meta{gap:14px;}
+  .hero-right{min-height:auto;padding:18px 18px 34px;perspective:none;}
+  .hero-statement{font-size:36px;letter-spacing:-.5px;margin-top:14px;}
+  .hero-scene{
+    min-height:360px;
+    transform:none !important;
+    overflow:visible;
+  }
+  .hero-panel{inset:22px 0 34px;transform:none;}
+  .hero-wordmark{font-size:46px;letter-spacing:6px;top:42%;transform:translate(-50%,-50%);}
+  .hero-product{
+    top:48%;
+    width:min(94%,380px);
+    transform:translate(-50%,-50%) rotate(-6deg) !important;
+  }
+  .hero-scene:hover .hero-product{transform:translate(-50%,-50%) rotate(-6deg) !important;}
+  .hero-info-card{left:6px;bottom:34px;width:158px;padding:14px;transform:none;}
+  .hero-size-card{right:6px;top:44px;width:116px;padding:13px;transform:none;}
+  .hero-card-label{font-size:7px;margin-bottom:7px;}
+  .hero-card-title{font-size:10px;}
+  .hero-card-sub{font-size:10px;line-height:1.45;}
+  .hero-card-price{font-size:22px;margin-bottom:8px;}
+  .hero-shadow{width:72%;top:66%;height:34px;transform:translateX(-50%) rotateX(72deg);}
+  .value-strip{grid-template-columns:1fr 1fr 1fr;}
+  .value-item{padding:16px 14px;font-size:8px;line-height:1.4;text-align:center;}
+  .context-forms{padding:44px 24px;}
+  .context-forms-grid{grid-template-columns:1fr;}
+
+  /* 3D canvas — mobile: static stacked layout */
+  .product-canvas{padding:56px 24px;}
+  .product-canvas-copy{margin-bottom:32px;}
+  .featured-selector{
+    display:flex;
+    gap:1px;
+    overflow-x:auto;
+    overflow-y:hidden;
+    width:100%;
+    max-width:100%;
+    min-width:0;
+    margin:0 0 28px;
+    padding:0 16px 8px 0;
+    background:transparent;
+    justify-content:flex-start;
+    transform:none;
+    scroll-snap-type:x proximity;
+    scroll-padding-inline:16px;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior-x:contain;
+  }
+  .featured-selector::-webkit-scrollbar{display:none;}
+  .featured-choice{
+    flex:0 0 auto;
+    min-width:174px;
+    max-width:174px;
+    scroll-snap-align:start;
+    background:rgba(247,247,245,.68);
+  }
+  .scene-wrap{perspective:none;min-height:auto;}
+  .scene{
+    position:static;
+    width:100%;height:auto;
+    display:flex;flex-direction:column;
+    align-items:center;gap:14px;
+    transform:none !important;
+  }
+  .hcard{
+    position:static !important;
+    width:100% !important;
+    max-width:360px !important;
+    margin:0 !important;
+    transform:none !important;
+  }
+  .hcard:hover{transform:none !important;}
+  .hcard-stat{display:none;}
+  .hcard-main{
+    order:1;
+    max-width:min(390px,100%) !important;
+    padding:18px 16px 20px;
+    overflow:hidden;
+    touch-action:pan-y;
+    transform-origin:center;
+    transition:opacity .6s ease, transform .28s ease, box-shadow .28s ease;
+    opacity:1;
+    --mobile-card-transform:translateY(0);
+    transform:var(--mobile-card-transform) !important;
+  }
+  .hcard-main::before{
+    content:'STOKADO';
+    position:absolute;
+    left:50%;
+    top:39%;
+    transform:translate(-50%,-50%);
+    font-size:clamp(42px,18vw,76px);
+    font-weight:500;
+    letter-spacing:8px;
+    color:rgba(247,247,245,.08);
+    pointer-events:none;
+    z-index:0;
+  }
+  .hcard-main::after{
+    content:'';
+    position:absolute;
+    left:50%;
+    top:64%;
+    width:74%;
+    height:42px;
+    transform:translateX(-50%);
+    background:radial-gradient(ellipse,rgba(5,8,12,.4) 0%,rgba(5,8,12,.19) 48%,rgba(5,8,12,0) 74%);
+    filter:blur(11px);
+    z-index:0;
+    pointer-events:none;
+  }
+  .hcard-main.mobile-visible{opacity:1;--mobile-card-transform:translateY(0);}
+  .hcard-main.is-touching{box-shadow:0 24px 48px rgba(5,8,12,.26);}
+  .hcard-main-img{position:relative;z-index:1;width:100%;height:auto;max-height:300px;object-fit:contain;}
+  .hcard-price{z-index:2;top:14px;right:14px;}
+  .hcard-label{position:relative;z-index:2;margin-top:12px;padding-top:10px;border-top:1px solid rgba(247,247,245,.1);}
+  .hcard-label h2{font-size:11px;}
+  .hcard-label p{font-size:11px;line-height:1.5;}
+  .hcard-opts{
+    order:2;
+    max-width:min(390px,100%) !important;
+    padding:18px 16px;
+  }
+  .hcard-cta{order:3;top:auto !important;max-width:min(390px,100%) !important;}
+  .scene-aside{display:none;}
+  @media (prefers-reduced-motion: reduce){
+    .hcard-main{opacity:1;transform:none !important;transition:none;}
+  }
+
+  .sec{padding:56px 24px;}
+  .life{padding:56px 24px;}
+  .life-intro{grid-template-columns:1fr;gap:28px;}
+  .life-grid{grid-template-columns:1fr 1fr;}
+  .truth{padding:56px 24px;}
+  .truth-inner{grid-template-columns:1fr;gap:28px;}
+  .truth-points{grid-template-columns:1fr 1fr;}
+  .beliefs{padding:64px 24px;}
+  .beliefs-grid{grid-template-columns:1fr;}
+  .belief{border-right:none;border-bottom:1px solid rgba(247,247,245,.06);padding:28px 0;}
+  .about-split{grid-template-columns:1fr;}
+  .about-l{padding:64px 24px;border-right:none;border-bottom:1px solid var(--ink-08);}
+  .about-r{min-height:200px;padding:48px 24px;}
+  .trust{grid-template-columns:1fr 1fr;}
+  .trust-item:nth-child(2){border-right:none;}
+  .journal{padding:56px 24px;}
+  .journal-grid{grid-template-columns:1fr;}
+  .newsletter{grid-template-columns:1fr;padding:64px 24px;gap:40px;}
+  .channels{padding:56px 24px;}
+  .channels-grid{grid-template-columns:1fr 1fr;}
+  .footer-grid{grid-template-columns:1fr 1fr;gap:32px;}
+  footer{padding:48px 24px 28px;}
+}
+@media(max-width:560px){
+  .hero-left{padding:24px 20px 16px;}
+  .hero-body{padding-top:20px;}
+  .hero-desc{margin-bottom:16px;}
+  .hero-price{font-size:36px;}
+  .hero-actions{margin-bottom:16px;}
+  .hero-heading{font-size:44px;}
+  .hero-statement{font-size:28px;line-height:1.08;margin-top:10px;}
+  .hero-right{padding:14px 16px 30px;}
+  .hero-scene{min-height:330px;}
+  .hero-product{top:46%;width:min(94%,330px);}
+  .hero-wordmark{font-size:40px;letter-spacing:5px;}
+  .hero-info-card{left:0;bottom:28px;width:148px;padding:12px;}
+  .hero-size-card{right:0;top:36px;width:106px;padding:12px;}
+  .hero-card-sub{font-size:9px;}
+  .hero-card-price{font-size:20px;}
+  .grid-products{grid-template-columns:1fr 1fr;}
+  .life-grid{grid-template-columns:1fr;}
+  .truth-points{grid-template-columns:1fr;}
+  .trust{grid-template-columns:1fr;}
+  .trust-item{border-right:none;}
+  .channels-grid{grid-template-columns:1fr;}
+  .footer-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="/" class="nav-logo">STOKADO</a>
+  <div class="nav-links">
+    <a href="#collection">Collection</a>
+    <a href="#why">Why STOKADO</a>
+    <a href="#" id="sz-trigger">Size Guide</a>
+  </div>
+  <div class="nav-right">
+    <button class="nav-cart snipcart-checkout">Cart (<span class="snipcart-items-count">0</span>)</button>
+    <button class="nav-ham" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO — Brand first -->
+<section class="hero">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Footwear Brand · Philippines</p>
+    <div>
+      <h1 class="hero-heading">STOKADO</h1>
+      <h2 class="hero-statement">Everyday footwear for Filipino life.</h2>
+    </div>
+    <div class="hero-body">
+      <p class="hero-desc" id="heroSupportLine">Comfortable, durable shoes for commutes, campus days, workdays, errands, and weekends across the Philippines.</p>
+      <div class="hero-actions">
+        <a href="#collection" class="btn-dark">Shop Now</a>
+        <a href="#why" class="btn-outline">Why STOKADO</a>
+      </div>
+      <div class="hero-meta">
+        <span>Comfort</span>
+        <span>Durability</span>
+        <span>Affordability</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right" id="hero3dWrap">
+    <div class="hero-shoe-wrap">
+      <div class="hero-scene" id="hero3dScene">
+        <div class="hero-panel"></div>
+        <div class="hero-wordmark">STOKADO</div>
+        <div class="hero-shadow"></div>
+        <div class="hero-product">
+          <img id="heroPrimaryImg" src="public/products/t901-white.png" alt="STOKADO T901 White / Gum everyday footwear"/>
+        </div>
+        <div class="hero-float-card hero-info-card">
+          <div class="hero-card-label">Hero Product</div>
+          <div class="hero-card-title" id="heroCardTitle">T901 White / Gum</div>
+          <div class="hero-card-sub" id="heroCardSub">Everyday court sneaker.</div>
+        </div>
+        <div class="hero-float-card hero-size-card">
+          <div class="hero-card-label">Callout</div>
+          <div class="hero-card-price" id="heroCardPrice">EASY STRAP</div>
+          <div class="hero-card-sub" id="heroCardSize">Clean court comfort</div>
+        </div>
+      </div>
+    </div>
+    <p class="hero-caption" id="heroCaption">T901 · White / Gum</p>
+    <div class="hero-navy-bar"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="mtrack">
+    <span>BUILT FOR EVERYDAY LIFE</span>
+    <span>LIGHTWEIGHT COMFORT</span>
+    <span>TROPICAL DURABILITY</span>
+    <span>MADE TO MOVE</span>
+    <span>STOKADO FOOTWEAR</span>
+    <span>BUILT FOR EVERYDAY LIFE</span>
+    <span>LIGHTWEIGHT COMFORT</span>
+    <span>TROPICAL DURABILITY</span>
+    <span>MADE TO MOVE</span>
+    <span>STOKADO FOOTWEAR</span>
+  </div>
+</div>
+
+<!-- PREMIUM PRODUCT SHOWCASE -->
+<section class="product-canvas" id="featured">
+  <div class="product-canvas-header">
+    <h2 class="product-canvas-title">Featured Style</h2>
+    <span class="product-canvas-sub" id="featuredSub">T901 White / Gum</span>
+  </div>
+  <p class="product-canvas-copy" id="featuredCopy">A clean everyday court sneaker made for repeated daily wear.</p>
+  <div class="scene-wrap" id="sceneWrap">
+    <p class="scene-aside l">Made for everyday movement</p>
+    <p class="scene-aside r">Designed for Philippine daily life</p>
+    <div class="scene" id="heroScene">
+      <div class="hcard hcard-stat">
+        <div class="hcard-stat-lbl" id="featuredStatLabel">STOKADO T901</div>
+        <div class="hcard-stat-num" id="featuredStatSize">EU<br>39–45</div>
+        <div class="hcard-stat-sub" id="featuredStatType">Everyday Court Sneaker</div>
+      </div>
+      <div class="hcard hcard-opts">
+        <div class="hcard-opts-title">Colorway</div>
+        <div class="dot-row" id="heroDots"></div>
+        <div class="hcard-opts-title" id="heroSizeTitle">Size EU 39–45</div>
+        <div class="sz-grid" id="heroSizes"></div>
+      </div>
+      <div class="hcard hcard-main">
+        <div class="hcard-price" id="heroPrice"><span>From</span>₱ —</div>
+        <img class="hcard-main-img" id="heroImg" src="" alt="STOKADO"/>
+        <div class="hcard-label">
+          <h2 id="heroName">—</h2>
+          <p id="heroSub">—</p>
+        </div>
+      </div>
+      <div class="hcard hcard-cta">
+        <button class="cta-add snipcart-add-item" id="heroAddBtn"
+          data-item-id="" data-item-price="" data-item-url="/index.html"
+          data-item-name="" data-item-image=""
+          data-item-custom1-name="Size (EU)" data-item-custom1-options="">
+          Add to Cart
+        </button>
+        <button class="cta-wish" aria-label="Wishlist">♡</button>
+      </div>
+    </div>
+  </div>
+  <div class="featured-selector" id="featuredSelector" aria-label="Featured product selector"></div>
+</section>
+
+<!-- COLLECTION -->
+<section class="sec" id="collection">
+  <div class="sec-hd">
+    <h2 class="sec-title">The Collection</h2>
+    <span class="sec-action" id="productCount">Made for daily routes</span>
+  </div>
+  <p class="life-copy" style="margin-bottom:32px;">The full line sits after the story. Each pair is placed as everyday footwear first: made for long hours on foot, repeated wear, and the normal movement of Philippine daily life.</p>
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="Men">Men</button>
+    <button class="filter-btn" data-filter="Women">Women</button>
+  </div>
+  <div class="grid-products" id="productGrid">
+    <div class="pcard visible"><div class="pcard-visual skel"></div><div class="pcard-info"><div class="skel" style="height:12px;width:60%;margin-bottom:8px;"></div><div class="skel" style="height:10px;width:40%;"></div></div></div>
+    <div class="pcard visible"><div class="pcard-visual skel"></div><div class="pcard-info"><div class="skel" style="height:12px;width:60%;margin-bottom:8px;"></div><div class="skel" style="height:10px;width:40%;"></div></div></div>
+    <div class="pcard visible"><div class="pcard-visual skel"></div><div class="pcard-info"><div class="skel" style="height:12px;width:60%;margin-bottom:8px;"></div><div class="skel" style="height:10px;width:40%;"></div></div></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="mtrack">
+    <span>COMFORT</span>
+    <span>DURABILITY</span>
+    <span>AFFORDABILITY</span>
+    <span>FILIPINO LIFE</span>
+    <span>EVERYDAY FOOTWEAR</span>
+    <span>DAILY MOVEMENT</span>
+    <span>STOKADO PHILIPPINES</span>
+    <span>MADE FOR EVERYDAY</span>
+    <span>COMFORT</span>
+    <span>DURABILITY</span>
+    <span>AFFORDABILITY</span>
+    <span>FILIPINO LIFE</span>
+    <span>EVERYDAY FOOTWEAR</span>
+    <span>DAILY MOVEMENT</span>
+    <span>STOKADO PHILIPPINES</span>
+    <span>MADE FOR EVERYDAY</span>
+  </div>
+</div>
+
+<!-- WHY STOKADO -->
+<section class="beliefs" id="why">
+  <h2 class="beliefs-heading">WHY<br><em>STOKADO</em></h2>
+  <div class="beliefs-grid">
+    <div class="belief"><span class="belief-tag">Comfort</span><h3 class="belief-title">For everyday use.</h3><p class="belief-body">Shoes should feel good through commutes, school days, work hours, errands, and weekends. STOKADO is made for the repeat days, not just the first wear.</p></div>
+    <div class="belief"><span class="belief-tag">Durability</span><h3 class="belief-title">Built for real movement.</h3><p class="belief-body">Everyday footwear has to handle walking, waiting, riding, working, and repeated wear. We focus on materials and construction that hold up to daily Filipino life.</p></div>
+    <div class="belief"><span class="belief-tag">Affordability</span><h3 class="belief-title">Honest price, better value.</h3><p class="belief-body">Good shoes should not feel out of reach. STOKADO keeps the focus on comfort, durability, and practical design instead of unnecessary hype or inflated markups.</p></div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="trust-item"><div class="trust-icon">📦</div><div class="trust-label">Free Shipping</div><div class="trust-sub">All orders within Philippines</div></div>
+  <div class="trust-item"><div class="trust-icon">↩</div><div class="trust-label">Easy Returns</div><div class="trust-sub">Try them on real floors, not only product pages</div></div>
+  <div class="trust-item"><div class="trust-icon">🔒</div><div class="trust-label">Secure Checkout</div><div class="trust-sub">Stripe · PayPal · GCash</div></div>
+  <div class="trust-item"><div class="trust-icon">✈</div><div class="trust-label">Ships to SEA</div><div class="trust-sub">Designed for movement beyond one city</div></div>
+</div>
+
+<section class="about-split" id="about">
+  <div class="about-l">
+    <div>
+      <p class="about-eyebrow">About STOKADO</p>
+      <h2 class="about-heading">A footwear brand built around daily life.</h2>
+      <p class="about-body">STOKADO started with a simple belief: the shoes people wear most should be the shoes brands take most seriously. We make everyday footwear for the way people actually move in the Philippines.</p>
+    </div>
+    <a href="#collection" class="btn-dark" style="margin-top:40px;">View Collection</a>
+  </div>
+  <div class="about-r"><div class="about-wordmark">STOKADO</div></div>
+</section>
+
+<section class="journal" id="journal">
+  <div class="sec-hd" style="border-bottom-color:rgba(31,31,31,.12);">
+    <h2 class="sec-title">Journal</h2>
+    <a href="#journal" class="sec-action">All Stories →</a>
+  </div>
+  <div class="journal-grid">
+    <article class="jcard"><div class="jcard-img"><div class="jcard-num">01</div></div><div class="jcard-body"><p class="jcard-tag">Craft</p><h3 class="jcard-title">Why the sole matters more than the upper</h3><p class="jcard-excerpt">Most people choose a shoe by how it looks. We spend most of our time thinking about what it stands on.</p><a href="#" class="jcard-link">Read →</a></div></article>
+    <article class="jcard"><div class="jcard-img"><div class="jcard-num">02</div></div><div class="jcard-body"><p class="jcard-tag">Everyday</p><h3 class="jcard-title">The commute shoe: what it actually needs to do</h3><p class="jcard-excerpt">Jeepney steps, wet sidewalks, long office hours. The everyday shoe has a harder job than most people realize.</p><a href="#" class="jcard-link">Read →</a></div></article>
+    <article class="jcard"><div class="jcard-img"><div class="jcard-num">03</div></div><div class="jcard-body"><p class="jcard-tag">Brand</p><h3 class="jcard-title">Why we chose not to do a celebrity collab</h3><p class="jcard-excerpt">A few opportunities came our way. Here is why we said no — and what we are building instead.</p><a href="#" class="jcard-link">Read →</a></div></article>
+  </div>
+</section>
+
+<section class="newsletter">
+  <div><h2 class="nl-heading">Stay with<br><em>STOKADO.</em></h2><p class="nl-sub">New products, brand notes, and useful footwear stories. No noisy weekly promotions.</p></div>
+  <div><form class="nl-form" onsubmit="handleSub(event)"><input class="nl-input" type="email" placeholder="Your email address" required/><button class="nl-btn" type="submit">Subscribe</button><p class="nl-note">We send less than most brands. Your inbox is sacred to us.</p></form></div>
+</section>
+
+<section class="channels" id="channels">
+  <div class="sec-hd"><h2 class="sec-title">Where to Find Us</h2></div>
+  <div class="channels-grid">
+    <div class="chcard"><div class="chcard-name">Official Website</div><p class="chcard-desc">Full collection, size guide, and secure checkout.</p><a href="https://stokadoofficial.com" target="_blank" rel="noopener" class="chcard-cta">Shop Now</a></div>
+    <div class="chcard"><div class="chcard-name">Shopee Philippines</div><p class="chcard-desc">Fast local shipping, Shopee Pay, buyer protection.</p><a href="https://ph.shp.ee/EWtFFwnP" target="_blank" rel="noopener" class="chcard-cta">Visit Store</a></div>
+    <div class="chcard"><div class="chcard-name">Lazada Philippines</div><p class="chcard-desc">LazMall standards, fast delivery, all payment methods.</p><a href="https://s.lazada.com.ph/s.Zgkf5u" target="_blank" rel="noopener" class="chcard-cta">Visit Store</a></div>
+    <div class="chcard"><div class="chcard-name">TikTok Shop</div><p class="chcard-desc">Watch and shop. Real people, real reviews.</p><a href="https://www.tiktok.com/@stokado_ph?_r=1&_t=ZS-97SA20Hgr3w" target="_blank" rel="noopener" class="chcard-cta">Watch &amp; Shop</a></div>
+    <div class="chcard"><div class="chcard-name">Retail Partners</div><p class="chcard-desc">Interested in carrying STOKADO across PH and SEA?</p><a href="mailto:stokado.shop@gmail.com" class="chcard-cta">Inquire</a></div>
+    <div class="chcard"><div class="chcard-name">International Orders</div><p class="chcard-desc">Shipping to SG, MY, ID, TH, VN and beyond.</p><a href="#collection" class="chcard-cta">Order Online</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div><div class="footer-brand-name">STOKADO</div><div class="footer-tagline">Everyday footwear for Filipino life.</div><p class="footer-desc">A footwear brand in the Philippines making comfortable, durable, honestly priced shoes for daily movement.</p></div>
+    <div class="footer-col"><div class="footer-col-title">Shop</div><a href="#collection">New Arrivals</a><a href="#collection">Men's</a><a href="#collection">Women's</a><a href="#collection">All Styles</a></div>
+    <div class="footer-col"><div class="footer-col-title">Brand</div><a href="#about">About</a><a href="#journal">Journal</a><a href="#channels">Stockists</a><a href="#" id="sz-trigger-2">Size Guide</a><a href="mailto:stokado.shop@gmail.com">Contact</a></div>
+    <div class="footer-col"><div class="footer-col-title">Policies</div><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Privacy</a><a href="#">Terms</a><a href="mailto:stokado.shop@gmail.com">Wholesale</a></div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© 2025 STOKADO. All rights reserved. Philippines.</p>
+    <div class="footer-legal"><a href="#">Privacy</a><a href="#">Terms</a><a href="mailto:stokado.shop@gmail.com">stokado.shop@gmail.com</a></div>
+  </div>
+</footer>
+
+<div class="overlay" id="sz-overlay" role="dialog" aria-modal="true" aria-label="Size Guide">
+  <div class="modal">
+    <button class="modal-close" id="sz-close">✕</button>
+    <h2 class="modal-title">Size Guide</h2>
+    <table class="sz-table">
+      <thead><tr><th>EU</th><th>US Men</th><th>US Women</th><th>UK</th><th>CM</th></tr></thead>
+      <tbody>
+        <tr><td>35</td><td>—</td><td>5</td><td>2.5</td><td>22.0</td></tr>
+        <tr><td>36</td><td>4</td><td>5.5</td><td>3.0</td><td>22.5</td></tr>
+        <tr><td>37</td><td>4.5</td><td>6.5</td><td>4.0</td><td>23.5</td></tr>
+        <tr><td>38</td><td>5.5</td><td>7.5</td><td>5.0</td><td>24.0</td></tr>
+        <tr><td>39</td><td>6.5</td><td>8.5</td><td>5.5</td><td>24.5</td></tr>
+        <tr><td>40</td><td>7.0</td><td>9.0</td><td>6.5</td><td>25.5</td></tr>
+        <tr><td>41</td><td>8.0</td><td>10.0</td><td>7.0</td><td>26.0</td></tr>
+        <tr><td>42</td><td>8.5</td><td>10.5</td><td>7.5</td><td>26.5</td></tr>
+        <tr><td>43</td><td>9.5</td><td>11.5</td><td>9.0</td><td>27.5</td></tr>
+        <tr><td>44</td><td>10.5</td><td>—</td><td>9.5</td><td>28.0</td></tr>
+        <tr><td>45</td><td>11.0</td><td>—</td><td>10.0</td><td>29.0</td></tr>
+      </tbody>
+    </table>
+    <p class="sz-note">STOKADO shoes fit true to EU size. Between sizes? Size up. Questions: <a href="mailto:stokado.shop@gmail.com" style="color:var(--navy)">stokado.shop@gmail.com</a></p>
+  </div>
+</div>
+
+<div hidden id="snipcart" data-api-key="YOUR_SNIPCART_PUBLIC_API_KEY" data-currency="php"></div>
+<script async src="https://cdn.snipcart.com/themes/v3.7.5/default/snipcart.js"></script>
+<script src="js/content.js"></script>
+<script>
+const isMobile = () => window.innerWidth <= 960;
+
+(async () => {
+  const { products, filterProducts, renderProductCard, productTitle, productTypeLabel, productTagline, checkoutName, productImage, injectProductSchema } = await STOKADO.load();
+  injectProductSchema(products);
+  const featuredProducts = filterProducts(products, { featured: true });
+  const heroProduct = products.find(product => product.hero && product.status === 'active') || featuredProducts[0] || products[0];
+
+  const sizeRange = product => {
+    const sizes = product.sizes || [];
+    return sizes.length ? `EU ${Math.min(...sizes)}–${Math.max(...sizes)}` : '';
+  };
+
+  const colorToken = colorway => {
+    const color = (colorway || '').toLowerCase();
+    if (color.includes('black')) return '#1F1F1F';
+    if (color.includes('denim')) return '#4A6A96';
+    if (color.includes('gum')) return '#C79A61';
+    return '#F7F7F5';
+  };
+
+  const heroCallout = product => {
+    const key = `${product.model || product.name || ''} ${product.colorway || ''}`.toLowerCase();
+    if (key.includes('t901') && key.includes('white') && key.includes('gum')) {
+      return { labelTitle: 'EASY STRAP', labelText: 'Clean court comfort' };
+    }
+    if (key.includes('t901') && key.includes('black') && key.includes('white')) {
+      return { labelTitle: 'CITY CONTRAST', labelText: 'Everyday strap sneaker' };
+    }
+    if (key.includes('t903') && key.includes('white') && key.includes('gum')) {
+      return { labelTitle: 'CLEAN STEP', labelText: 'Light daily court form' };
+    }
+    if (key.includes('s900') && key.includes('white')) {
+      return { labelTitle: 'SLIP-ON EASE', labelText: 'Quick everyday wear' };
+    }
+    if (key.includes('s900') && key.includes('denim')) {
+      return { labelTitle: 'EASY HEIGHT', labelText: 'Everyday platform comfort' };
+    }
+    if (key.includes('s902') && key.includes('denim')) {
+      return { labelTitle: 'DENIM MOTION', labelText: 'Raw-edge daily sneaker' };
+    }
+    if (key.includes('s902') && key.includes('black') && key.includes('white')) {
+      return { labelTitle: 'GROUND READY', labelText: 'Stable everyday grip' };
+    }
+    return { labelTitle: 'DAILY COMFORT', labelText: 'Built for everyday movement' };
+  };
+
+  const renderFeaturedSelector = activeId => {
+    const selector = document.getElementById('featuredSelector');
+    if (!selector) return;
+    selector.innerHTML = featuredProducts.map(product => `
+      <button class="featured-choice${product.id === activeId ? ' active' : ''}" type="button" data-product-id="${product.id}" aria-pressed="${product.id === activeId}">
+        <img class="featured-choice-img" src="${productImage(product)}" alt="" loading="lazy">
+        <span>
+          <span class="featured-choice-model">${product.model || product.name || 'STOKADO'}</span>
+          <span class="featured-choice-color">${product.colorway || ''}</span>
+        </span>
+      </button>
+    `).join('');
+  };
+
+  const setFeaturedProduct = product => {
+    if (!product) return;
+    const img = productImage(product);
+    const name = productTitle(product) || product.title || product.name || 'STOKADO Footwear';
+    const type = productTypeLabel(product) || product.category_label || 'Everyday Footwear';
+    const sizes = product.sizes || [];
+    const sizeRange = sizes.length ? `EU ${Math.min(...sizes)}–${Math.max(...sizes)}` : '';
+    const variants = products.filter(item => item.status === 'active' && item.model === product.model);
+
+    document.getElementById('heroSupportLine').textContent = productTagline(product) || 'Comfortable daily footwear for commutes, campus, errands, and weekends.';
+    document.getElementById('heroPrimaryImg').src = img;
+    document.getElementById('heroPrimaryImg').alt = `${name} ${product.colorway || ''}`;
+    document.getElementById('heroCardTitle').textContent = `${product.model || product.name || 'STOKADO'} ${product.colorway || ''}`.trim();
+    document.getElementById('heroCardSub').textContent = type;
+    const callout = heroCallout(product);
+    document.getElementById('heroCardPrice').textContent = callout.labelTitle;
+    document.getElementById('heroCardSize').textContent = callout.labelText;
+    document.getElementById('heroCaption').textContent = `${product.model || product.name || 'STOKADO'} · ${product.colorway || ''}`;
+
+    document.getElementById('featuredSub').textContent = `${product.model || product.name || 'STOKADO'} ${product.colorway || ''}`.trim();
+    document.getElementById('featuredCopy').textContent = product.description || productTagline(product) || 'A clean everyday sneaker made for repeated daily wear.';
+    const imgEl = document.getElementById('heroImg');
+    if (imgEl.src !== new URL(img, window.location.href).href) {
+      imgEl.style.opacity = '.18';
+      window.setTimeout(() => {
+        imgEl.src = img;
+        imgEl.alt = `${name} ${product.colorway || ''}`;
+        imgEl.style.opacity = '1';
+      }, 120);
+    } else {
+      imgEl.alt = `${name} ${product.colorway || ''}`;
+    }
+    if (product.price) document.getElementById('heroPrice').innerHTML = `<span>From</span>₱ ${product.price.toLocaleString()}`;
+    document.getElementById('heroName').textContent = name;
+    document.getElementById('heroSub').textContent = product.colorway ? `${type} · ${product.colorway}` : type;
+    document.getElementById('featuredStatLabel').textContent = name;
+    document.getElementById('featuredStatSize').innerHTML = sizeRange ? sizeRange.replace(' ', '<br>') : 'EU';
+    document.getElementById('featuredStatType').textContent = type;
+    document.getElementById('heroSizeTitle').textContent = sizeRange ? `Size ${sizeRange}` : 'Size';
+    document.getElementById('heroSizes').innerHTML = sizes.slice(0,6).map((size,index) =>
+      `<div class="sz-btn${index === 1 ? ' active' : ''}">${size}</div>`).join('');
+    document.getElementById('heroDots').innerHTML = variants.map(variant =>
+      `<button class="cdot${variant.id === product.id ? ' active' : ''}" type="button" style="background:${colorToken(variant.colorway)}" data-product-id="${variant.id}" title="${variant.colorway || ''}" aria-label="${variant.colorway || 'Colorway'}"></button>`
+    ).join('');
+
+    const featuredBtn = document.getElementById('heroAddBtn');
+    featuredBtn.dataset.itemId = product.id || '';
+    featuredBtn.dataset.itemPrice = product.price || '';
+    featuredBtn.dataset.itemName = checkoutName(product);
+    featuredBtn.dataset.itemImage = img;
+    featuredBtn.dataset.itemCustom1Options = sizes.join('|');
+    document.querySelectorAll('.featured-choice').forEach(choice => {
+      const active = choice.dataset.productId === product.id;
+      choice.classList.toggle('active', active);
+      choice.setAttribute('aria-pressed', active);
+    });
+  };
+
+  if (heroProduct) {
+    renderFeaturedSelector(heroProduct.id);
+    setFeaturedProduct(heroProduct);
+  }
+
+  document.getElementById('productCount').textContent = `SS 2025 — ${featuredProducts.length} Styles`;
+  const grid = document.getElementById('productGrid');
+  grid.innerHTML = featuredProducts.map(renderProductCard).join('');
+  setTimeout(() => grid.querySelectorAll('.pcard').forEach(c => c.classList.add('visible')), 50);
+
+  document.getElementById('filterBar').addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    const filtered = f === 'all' ? filterProducts(products,{featured:true}) : filterProducts(products,{featured:true,gender:f});
+    grid.innerHTML = filtered.map(renderProductCard).join('');
+    setTimeout(() => grid.querySelectorAll('.pcard').forEach(c => c.classList.add('visible')), 50);
+  });
+
+  document.getElementById('featuredSelector').addEventListener('click', e => {
+    const choice = e.target.closest('.featured-choice');
+    if (!choice) return;
+    const product = featuredProducts.find(item => item.id === choice.dataset.productId);
+    setFeaturedProduct(product);
+  });
+
+  document.getElementById('heroDots').addEventListener('click', e => {
+    const dot = e.target.closest('.cdot');
+    if (!dot) return;
+    const product = products.find(item => item.id === dot.dataset.productId);
+    setFeaturedProduct(product);
+  });
+})();
+
+// Hero parallax — desktop only
+const hero3dWrap = document.getElementById('hero3dWrap');
+const hero3dScene = document.getElementById('hero3dScene');
+if (hero3dWrap && hero3dScene) {
+  let hTX = 0, hTY = 0, hCX = 0, hCY = 0;
+  hero3dWrap.addEventListener('mousemove', e => {
+    if (isMobile()) return;
+    const r = hero3dWrap.getBoundingClientRect();
+    hTX = ((e.clientX - r.left) / r.width - .5) * 10;
+    hTY = ((e.clientY - r.top) / r.height - .5) * -8;
+  });
+  hero3dWrap.addEventListener('mouseleave', () => { hTX = 0; hTY = 0; });
+  (function heroRaf(){
+    if (!isMobile()) {
+      hCX += (hTX - hCX) * .08;
+      hCY += (hTY - hCY) * .08;
+      hero3dScene.style.transform = `rotateY(${hCX}deg) rotateX(${hCY}deg)`;
+    } else {
+      hero3dScene.style.transform = '';
+    }
+    requestAnimationFrame(heroRaf);
+  })();
+}
+
+// Featured showcase parallax — desktop only
+const scene = document.getElementById('heroScene');
+const wrap = document.getElementById('sceneWrap');
+if (scene && wrap) {
+  let tX=0,tY=0,cX=0,cY=0;
+  wrap.addEventListener('mousemove', e => {
+    if (isMobile()) return;
+    const r = wrap.getBoundingClientRect();
+    tX = ((e.clientX-r.left)/r.width - .5) * 14;
+    tY = ((e.clientY-r.top)/r.height - .5) * -10;
+  });
+  wrap.addEventListener('mouseleave', () => { tX=0; tY=0; });
+  (function raf(){
+    if (!isMobile()) {
+      cX += (tX-cX)*.08; cY += (tY-cY)*.08;
+      scene.style.transform = `rotateY(${cX}deg) rotateX(${cY}deg)`;
+    } else {
+      scene.style.transform = '';
+    }
+    requestAnimationFrame(raf);
+  })();
+}
+
+document.addEventListener('click', e => {
+  if (!e.target.classList.contains('sz-btn')) return;
+  e.target.closest('.sz-grid').querySelectorAll('.sz-btn').forEach(b => b.classList.remove('active'));
+  e.target.classList.add('active');
+});
+
+const ov = document.getElementById('sz-overlay');
+['sz-trigger','sz-trigger-2'].forEach(id => {
+  document.getElementById(id).addEventListener('click', e => { e.preventDefault(); ov.classList.add('open'); });
+});
+document.getElementById('sz-close').addEventListener('click', () => ov.classList.remove('open'));
+ov.addEventListener('click', e => { if(e.target===ov) ov.classList.remove('open'); });
+document.addEventListener('keydown', e => { if(e.key==='Escape') ov.classList.remove('open'); });
+
+function handleSub(e) {
+  e.preventDefault();
+  const b = e.target.querySelector('.nl-btn');
+  b.textContent = 'Subscribed ✓'; b.style.background='#3a5a3a'; b.style.color='#fff';
+  e.target.querySelector('input').value = '';
+  setTimeout(() => { b.textContent='Subscribe'; b.style.background=''; b.style.color=''; }, 3000);
+}
+</script>
+</body>
 </html>
