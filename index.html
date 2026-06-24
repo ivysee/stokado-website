@@ -3,19 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#121212">
 <title>STOKADO — Everyday Footwear for Filipino Life</title>
 <meta name="description" content="STOKADO is a footwear brand in the Philippines making everyday sneakers and slip-ons for Filipino life: comfortable, durable, and honestly priced.">
+<meta name="robots" content="index, follow, max-image-preview:large">
 <meta property="og:title" content="STOKADO — Everyday Footwear for Filipino Life">
 <meta property="og:description" content="A Philippine footwear brand for everyday comfort, durability, and honest pricing.">
-<meta property="og:url" content="https://stokadoofficial.com">
-<link rel="canonical" href="https://stokadoofficial.com">
-<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.7.5/default/snipcart.css"/>
+<meta property="og:url" content="https://stokadoofficial.com/">
+<link rel="canonical" href="https://stokadoofficial.com/">
+<link rel="sitemap" type="application/xml" href="https://stokadoofficial.com/sitemap.xml">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<script>
+window.dataLayer = window.dataLayer || [];
+window.STOKADO_ANALYTICS = {
+  ga4MeasurementId: 'G-XXXXXXXXXX'
+};
+window.gtag = window.gtag || function () {
+  window.dataLayer.push(arguments);
+};
+
+(function initializeGA4() {
+  const measurementId = window.STOKADO_ANALYTICS.ga4MeasurementId;
+  const isConfigured = /^G-[A-Z0-9]+$/.test(measurementId) && measurementId !== 'G-XXXXXXXXXX';
+  if (!isConfigured) return;
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(measurementId)}`;
+  document.head.appendChild(script);
+
+  window.gtag('js', new Date());
+  window.gtag('config', measurementId, { send_page_view: false });
+})();
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
-  {"@type":["Organization","Brand"],"additionalType":"FootwearBrand","@id":"https://stokadoofficial.com/#organization","name":"STOKADO","legalName":"STOKADO","url":"https://stokadoofficial.com","description":"STOKADO is a footwear brand in the Philippines making everyday sneakers and slip-ons for Filipino life.","foundingCountry":"PH","areaServed":["PH","SG","MY","ID","TH","VN"],"knowsAbout":["Footwear","Everyday sneakers","Philippine footwear","Affordable shoes","Comfort shoes"],"slogan":"Everyday footwear for Filipino life.","brand":{"@type":"Brand","name":"STOKADO","slogan":"Everyday footwear for Filipino life."},"sameAs":["https://www.instagram.com/stokado.ph?igsh=bXNrYnRmeXB6eDlq&utm_source=qr","https://www.facebook.com/share/1MKjm81msH/?mibextid=wwXIfr","https://www.tiktok.com/@stokado_ph?_r=1&_t=ZS-97SA20Hgr3w","https://ph.shp.ee/EWtFFwnP","https://s.lazada.com.ph/s.Zgkf5u"]},
-  {"@type":"WebSite","@id":"https://stokadoofficial.com/#website","url":"https://stokadoofficial.com","name":"STOKADO Official","description":"Official website of STOKADO, a Philippine footwear brand.","publisher":{"@id":"https://stokadoofficial.com/#organization"}}
+  {"@type":["Organization","Brand"],"additionalType":"FootwearBrand","@id":"https://stokadoofficial.com/#organization","name":"STOKADO","legalName":"STOKADO","url":"https://stokadoofficial.com/","description":"STOKADO is a footwear brand in the Philippines making everyday sneakers and slip-ons for Filipino life.","foundingCountry":"PH","areaServed":["PH","SG","MY","ID","TH","VN"],"knowsAbout":["Footwear","Everyday sneakers","Philippine footwear","Affordable shoes","Comfort shoes"],"slogan":"Everyday footwear for Filipino life.","brand":{"@type":"Brand","name":"STOKADO","slogan":"Everyday footwear for Filipino life."},"sameAs":["https://www.instagram.com/stokado.ph?igsh=bXNrYnRmeXB6eDlq&utm_source=qr","https://www.facebook.com/share/1MKjm81msH/?mibextid=wwXIfr","https://www.tiktok.com/@stokado_ph?_r=1&_t=ZS-97SA20Hgr3w","https://ph.shp.ee/EWtFFwnP","https://s.lazada.com.ph/s.Zgkf5u"]},
+  {"@type":"WebSite","@id":"https://stokadoofficial.com/#website","url":"https://stokadoofficial.com/","name":"STOKADO Official","description":"Official website of STOKADO, a Philippine footwear brand.","publisher":{"@id":"https://stokadoofficial.com/#organization"}}
 ]}
 </script>
 <style>
@@ -45,8 +74,6 @@ button{font-family:var(--ff-sans);cursor:pointer;border:none;background:none;}
 .nav-links a{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-50);transition:color .2s;}
 .nav-links a:hover{color:var(--ink);}
 .nav-right{display:flex;align-items:center;gap:16px;}
-.nav-cart{font-size:10px;letter-spacing:2px;text-transform:uppercase;border:1px solid var(--ink-20);padding:7px 18px;transition:all .2s;color:var(--ink);}
-.nav-cart:hover{background:var(--ink);color:var(--white);}
 .nav-ham{display:none;flex-direction:column;gap:5px;}
 .nav-ham span{width:20px;height:1px;background:var(--ink);display:block;}
 
@@ -485,6 +512,38 @@ footer{background:var(--ink);color:var(--white);padding:64px 40px 32px;}
 .sz-table td{padding:10px 0;border-bottom:1px solid var(--ink-08);}
 .sz-note{margin-top:18px;font-size:11px;color:var(--ink-50);line-height:1.8;}
 
+/* PURCHASE ROUTING MODAL */
+.purchase-overlay{
+  display:none;position:fixed;inset:0;z-index:220;
+  background:rgba(20,27,35,.72);backdrop-filter:blur(8px);
+  align-items:flex-end;justify-content:center;padding:16px;
+}
+.purchase-overlay.open{display:flex;}
+.purchase-modal{
+  position:relative;width:100%;max-width:480px;
+  background:var(--white);padding:34px 24px 24px;
+  box-shadow:0 28px 80px rgba(7,12,18,.3);
+}
+.purchase-close{
+  position:absolute;top:14px;right:14px;width:40px;height:40px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--ink-50);font-size:18px;
+}
+.purchase-kicker{font-size:8px;letter-spacing:2.4px;text-transform:uppercase;color:var(--ink-50);margin-bottom:8px;}
+.purchase-title{font-family:var(--ff-serif);font-size:36px;font-weight:300;line-height:1.1;margin-bottom:8px;}
+.purchase-product{font-size:11px;letter-spacing:1.4px;text-transform:uppercase;color:var(--ink-50);margin-bottom:24px;}
+.purchase-platforms{display:grid;gap:8px;}
+.purchase-platform{
+  min-height:52px;padding:0 18px;border:1px solid var(--ink-20);
+  display:flex;align-items:center;justify-content:space-between;
+  font-size:10px;letter-spacing:2px;text-transform:uppercase;
+  transition:background .2s,color .2s,border-color .2s;
+}
+.purchase-platform::after{content:'↗';font-size:15px;letter-spacing:0;}
+.purchase-platform:hover,.purchase-platform:focus-visible{background:var(--navy);border-color:var(--navy);color:var(--white);}
+.purchase-note{font-size:10px;color:var(--ink-50);line-height:1.7;margin-top:18px;}
+body.modal-open{overflow:hidden;}
+
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
   body > section,
@@ -692,6 +751,10 @@ footer{background:var(--ink);color:var(--white);padding:64px 40px 32px;}
   .channels-grid{grid-template-columns:1fr;}
   .footer-grid{grid-template-columns:1fr;}
 }
+@media(min-width:561px){
+  .purchase-overlay{align-items:center;padding:24px;}
+  .purchase-modal{padding:44px 40px 34px;}
+}
 </style>
 </head>
 <body>
@@ -705,7 +768,6 @@ footer{background:var(--ink);color:var(--white);padding:64px 40px 32px;}
     <a href="#" id="sz-trigger">Size Guide</a>
   </div>
   <div class="nav-right">
-    <button class="nav-cart snipcart-checkout">Cart (<span class="snipcart-items-count">0</span>)</button>
     <button class="nav-ham" aria-label="Menu"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -804,11 +866,9 @@ footer{background:var(--ink);color:var(--white);padding:64px 40px 32px;}
         </div>
       </div>
       <div class="hcard hcard-cta">
-        <button class="cta-add snipcart-add-item" id="heroAddBtn"
-          data-item-id="" data-item-price="" data-item-url="/index.html"
-          data-item-name="" data-item-image=""
-          data-item-custom1-name="Size (EU)" data-item-custom1-options="">
-          Add to Cart
+        <button class="cta-add js-buy-now" id="heroAddBtn"
+          type="button" data-product-id="">
+          Buy Now
         </button>
         <button class="cta-wish" aria-label="Wishlist">♡</button>
       </div>
@@ -871,7 +931,7 @@ footer{background:var(--ink);color:var(--white);padding:64px 40px 32px;}
 <div class="trust">
   <div class="trust-item"><div class="trust-icon">📦</div><div class="trust-label">Free Shipping</div><div class="trust-sub">All orders within Philippines</div></div>
   <div class="trust-item"><div class="trust-icon">↩</div><div class="trust-label">Easy Returns</div><div class="trust-sub">Try them on real floors, not only product pages</div></div>
-  <div class="trust-item"><div class="trust-icon">🔒</div><div class="trust-label">Secure Checkout</div><div class="trust-sub">Stripe · PayPal · GCash</div></div>
+  <div class="trust-item"><div class="trust-icon">✓</div><div class="trust-label">Official Channels</div><div class="trust-sub">TikTok Shop · Shopee · Lazada</div></div>
   <div class="trust-item"><div class="trust-icon">✈</div><div class="trust-label">Ships to SEA</div><div class="trust-sub">Designed for movement beyond one city</div></div>
 </div>
 
@@ -907,7 +967,7 @@ footer{background:var(--ink);color:var(--white);padding:64px 40px 32px;}
 <section class="channels" id="channels">
   <div class="sec-hd"><h2 class="sec-title">Where to Find Us</h2></div>
   <div class="channels-grid">
-    <div class="chcard"><div class="chcard-name">Official Website</div><p class="chcard-desc">Full collection, size guide, and secure checkout.</p><a href="https://stokadoofficial.com" target="_blank" rel="noopener" class="chcard-cta">Shop Now</a></div>
+    <div class="chcard"><div class="chcard-name">Official Website</div><p class="chcard-desc">Full collection, size guide, and official marketplace links.</p><a href="https://stokadoofficial.com" target="_blank" rel="noopener" class="chcard-cta">Shop Now</a></div>
     <div class="chcard"><div class="chcard-name">Shopee Philippines</div><p class="chcard-desc">Fast local shipping, Shopee Pay, buyer protection.</p><a href="https://ph.shp.ee/EWtFFwnP" target="_blank" rel="noopener" class="chcard-cta">Visit Store</a></div>
     <div class="chcard"><div class="chcard-name">Lazada Philippines</div><p class="chcard-desc">LazMall standards, fast delivery, all payment methods.</p><a href="https://s.lazada.com.ph/s.Zgkf5u" target="_blank" rel="noopener" class="chcard-cta">Visit Store</a></div>
     <div class="chcard"><div class="chcard-name">TikTok Shop</div><p class="chcard-desc">Watch and shop. Real people, real reviews.</p><a href="https://www.tiktok.com/@stokado_ph?_r=1&_t=ZS-97SA20Hgr3w" target="_blank" rel="noopener" class="chcard-cta">Watch &amp; Shop</a></div>
@@ -953,14 +1013,101 @@ footer{background:var(--ink);color:var(--white);padding:64px 40px 32px;}
   </div>
 </div>
 
-<div hidden id="snipcart" data-api-key="YOUR_SNIPCART_PUBLIC_API_KEY" data-currency="php"></div>
-<script async src="https://cdn.snipcart.com/themes/v3.7.5/default/snipcart.js"></script>
+<div class="purchase-overlay" id="purchase-overlay" role="dialog" aria-modal="true" aria-labelledby="purchase-title">
+  <div class="purchase-modal">
+    <button class="purchase-close" id="purchase-close" type="button" aria-label="Close purchase options">✕</button>
+    <p class="purchase-kicker">Official marketplace channels</p>
+    <h2 class="purchase-title" id="purchase-title">Available On</h2>
+    <p class="purchase-product" id="purchase-product"></p>
+    <div class="purchase-platforms" id="purchase-platforms"></div>
+    <p class="purchase-note">You will continue your purchase on the selected marketplace.</p>
+  </div>
+</div>
+
 <script src="js/content.js"></script>
 <script>
 const isMobile = () => window.innerWidth <= 960;
+let purchaseProducts = [];
+let purchaseReturnFocus = null;
+
+const purchaseOverlay = document.getElementById('purchase-overlay');
+const purchaseClose = document.getElementById('purchase-close');
+const purchaseProduct = document.getElementById('purchase-product');
+const purchasePlatforms = document.getElementById('purchase-platforms');
+const platformLabels = {
+  tiktok: 'TikTok Shop',
+  shopee: 'Shopee',
+  lazada: 'Lazada'
+};
+const platformTrackingNames = {
+  tiktok: 'TikTok',
+  shopee: 'Shopee',
+  lazada: 'Lazada'
+};
+
+const analyticsProductName = product => (
+  `${product.brand || 'STOKADO'} ${product.model || product.name || ''}${product.colorway ? ` · ${product.colorway}` : ''}`.trim()
+);
+
+const trackAnalyticsEvent = (eventName, parameters = {}) => {
+  const eventData = { event: eventName, ...parameters };
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push(eventData);
+
+  const measurementId = window.STOKADO_ANALYTICS?.ga4MeasurementId || '';
+  const isConfigured = /^G-[A-Z0-9]+$/.test(measurementId) && measurementId !== 'G-XXXXXXXXXX';
+  if (isConfigured && typeof window.gtag === 'function') {
+    window.gtag('event', eventName, parameters);
+  }
+};
+
+const closePurchaseModal = () => {
+  purchaseOverlay.classList.remove('open');
+  document.body.classList.remove('modal-open');
+  if (purchaseReturnFocus) purchaseReturnFocus.focus();
+};
+
+const trackPlatformClick = (productName, platformName) => {
+  trackAnalyticsEvent('platform_click', {
+    product_name: productName,
+    platform_name: platformName
+  });
+  window.dispatchEvent(new CustomEvent('platform_click', {
+    detail: {
+      product_name: productName,
+      platform_name: platformName
+    }
+  }));
+};
+
+const openPurchaseModal = (product, trigger) => {
+  if (!product) return;
+  const productName = analyticsProductName(product);
+  const links = product.purchase_links || {};
+
+  purchaseProduct.textContent = productName;
+  purchasePlatforms.innerHTML = Object.entries(platformLabels)
+    .filter(([key]) => Boolean(links[key]))
+    .map(([key, label]) => `
+      <a class="purchase-platform" href="${links[key]}" target="_blank" rel="noopener noreferrer"
+        data-platform-name="${platformTrackingNames[key]}" data-product-name="${productName}">${label}</a>
+    `).join('');
+
+  purchaseReturnFocus = trigger || null;
+  purchaseOverlay.classList.add('open');
+  document.body.classList.add('modal-open');
+  purchaseClose.focus();
+};
+
+trackAnalyticsEvent('page_view', {
+  page_title: document.title,
+  page_location: window.location.href,
+  page_path: window.location.pathname
+});
 
 (async () => {
-  const { products, filterProducts, renderProductCard, productTitle, productTypeLabel, productTagline, checkoutName, productImage, injectProductSchema } = await STOKADO.load();
+  const { products, filterProducts, renderProductCard, productTitle, productTypeLabel, productTagline, purchaseName, productImage, injectProductSchema } = await STOKADO.load();
+  purchaseProducts = products;
   injectProductSchema(products);
   const featuredProducts = filterProducts(products, { featured: true });
   const heroProduct = products.find(product => product.hero && product.status === 'active') || featuredProducts[0] || products[0];
@@ -1064,11 +1211,8 @@ const isMobile = () => window.innerWidth <= 960;
     ).join('');
 
     const featuredBtn = document.getElementById('heroAddBtn');
-    featuredBtn.dataset.itemId = product.id || '';
-    featuredBtn.dataset.itemPrice = product.price || '';
-    featuredBtn.dataset.itemName = checkoutName(product);
-    featuredBtn.dataset.itemImage = img;
-    featuredBtn.dataset.itemCustom1Options = sizes.join('|');
+    featuredBtn.dataset.productId = product.id || '';
+    featuredBtn.setAttribute('aria-label', `Buy ${purchaseName(product)}`);
     document.querySelectorAll('.featured-choice').forEach(choice => {
       const active = choice.dataset.productId === product.id;
       choice.classList.toggle('active', active);
@@ -1111,6 +1255,30 @@ const isMobile = () => window.innerWidth <= 960;
     setFeaturedProduct(product);
   });
 })();
+
+document.addEventListener('click', e => {
+  const buyButton = e.target.closest('.js-buy-now');
+  if (buyButton) {
+    const product = purchaseProducts.find(item => item.id === buyButton.dataset.productId);
+    if (product) {
+      trackAnalyticsEvent('buy_now_click', {
+        product_name: analyticsProductName(product)
+      });
+    }
+    openPurchaseModal(product, buyButton);
+    return;
+  }
+
+  const platformLink = e.target.closest('.purchase-platform');
+  if (platformLink) {
+    trackPlatformClick(platformLink.dataset.productName, platformLink.dataset.platformName);
+  }
+});
+
+purchaseClose.addEventListener('click', closePurchaseModal);
+purchaseOverlay.addEventListener('click', e => {
+  if (e.target === purchaseOverlay) closePurchaseModal();
+});
 
 // Hero parallax — desktop only
 const hero3dWrap = document.getElementById('hero3dWrap');
@@ -1171,7 +1339,11 @@ const ov = document.getElementById('sz-overlay');
 });
 document.getElementById('sz-close').addEventListener('click', () => ov.classList.remove('open'));
 ov.addEventListener('click', e => { if(e.target===ov) ov.classList.remove('open'); });
-document.addEventListener('keydown', e => { if(e.key==='Escape') ov.classList.remove('open'); });
+document.addEventListener('keydown', e => {
+  if (e.key !== 'Escape') return;
+  ov.classList.remove('open');
+  if (purchaseOverlay.classList.contains('open')) closePurchaseModal();
+});
 
 function handleSub(e) {
   e.preventDefault();
