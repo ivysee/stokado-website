@@ -48,26 +48,39 @@
 
 ---
 
-## 接入购物车 Snipcart（收钱）
+## 商品购买渠道
 
-1. 去 https://snipcart.com 注册免费账号
-2. 在 Dashboard → Account → API Keys 复制你的 `Public API Key`
-3. 在 `index.html` 最底部找到这行：
-   ```html
-   <div hidden id="snipcart" data-api-key="YOUR_SNIPCART_PUBLIC_API_KEY" ...>
-   ```
-4. 把 `YOUR_SNIPCART_PUBLIC_API_KEY` 替换成你的真实 key
-5. 在 Snipcart Dashboard 接入 PayPal 或 Stripe 收款
-6. **费用：每笔成交抽 2%，不卖货不收钱**
+官网不提供购物车、结账或付款功能。
+
+顾客点击商品的 `BUY NOW` 后，会看到 `Available On` 弹窗，并前往：
+
+- TikTok Shop
+- Shopee
+- Lazada
+
+每个商品的渠道链接配置在：
+
+- `data/products.json` → `purchase_links`
+
+缺少链接的平台会自动隐藏。
 
 ---
 
-## 接入 GCash（菲律宾本地支付）
+## Google Analytics 4
 
-Snipcart 可以通过 PayMongo 支持 GCash：
-1. 去 https://paymongo.com 注册菲律宾商家账号
-2. 在 Snipcart → Payment → 选 PayMongo
-3. 客户就可以用 GCash 付款
+网站已经预设以下事件：
+
+- `page_view`
+- `buy_now_click`，包含 `product_name`
+- `platform_click`，包含 `product_name` 和 `platform_name`
+
+在 `index.html` 顶部将：
+
+```js
+ga4MeasurementId: 'G-XXXXXXXXXX'
+```
+
+替换为 Google Analytics 提供的真实 Measurement ID。所有事件同时进入 `dataLayer`，可供未来 Google Tag Manager 使用。
 
 ---
 
@@ -118,6 +131,6 @@ stokado/
 
 ## 联系 & 更新
 
-更新产品、改价格、加新款：直接编辑 `index.html` 对应位置，重新上传到 GitHub 即可，网站自动更新。
+更新产品、价格、图片或购买渠道：编辑 `data/products.json`，重新上传到 GitHub 即可。
 
 需要帮助？继续问 Claude。

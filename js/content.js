@@ -83,7 +83,7 @@ const STOKADO = (() => {
     return product.product_tagline || product.lifestyle_line || '';
   }
 
-  function checkoutName(product) {
+  function purchaseName(product) {
     return `${productTitle(product)} — ${product.colorway}`;
   }
 
@@ -123,15 +123,11 @@ const STOKADO = (() => {
               <span itemprop="priceCurrency" content="${product.currency}">₱</span><span
               itemprop="price" content="${product.price}">${product.price.toLocaleString()}</span>
             </div>
-            <button class="pcard-add snipcart-add-item"
-              data-item-id="${product.id}"
-              data-item-price="${product.price}"
-              data-item-url="/index.html"
-              data-item-name="${checkoutName(product)}"
-              data-item-image="${img}"
-              data-item-custom1-name="Size (EU)"
-              data-item-custom1-options="${product.sizes.join('|')}">
-              Add to Cart
+            <button class="pcard-add js-buy-now"
+              type="button"
+              data-product-id="${product.id}"
+              aria-label="Buy ${purchaseName(product)}">
+              Buy Now
             </button>
           </div>
         </div>
@@ -198,10 +194,10 @@ const STOKADO = (() => {
       fetchProducts(),
       fetchBrand(),
     ]);
-    return { products, brand, filterProducts, renderProductCard, renderHeroProduct, productTitle, productTypeLabel, productTagline, checkoutName, productImage, injectProductSchema };
+    return { products, brand, filterProducts, renderProductCard, renderHeroProduct, productTitle, productTypeLabel, productTagline, purchaseName, productImage, injectProductSchema };
   }
 
-  return { load, filterProducts, renderProductCard, renderHeroProduct, formatPrice, productTitle, productTypeLabel, productTagline, checkoutName, productImage, injectProductSchema };
+  return { load, filterProducts, renderProductCard, renderHeroProduct, formatPrice, productTitle, productTypeLabel, productTagline, purchaseName, productImage, injectProductSchema };
 
 })();
 
